@@ -1,10 +1,10 @@
 import {BrowserRouter, Routes, Route} from "react-router"
 import Home from "./pages/home/home"
-import Insert from "./pages/InsertVersicle/Insert"
-import Edit from "./pages/EditVersicle/Edit"
-import Remove from "./pages/RemoveVersicle/Remove"
+import Insert from "./pages/user/InsertVersicle/Insert"
+import Edit from "./pages/user/EditVersicle/Edit"
+import Remove from "./pages/user/RemoveVersicle/Remove"
 import VersiclesGlobal from "./pages/Versicles/VersiclesGlobal"
-import YourVersicles from "./pages/YoursVersicles/YourVersicles"
+import YourVersicles from "./pages/user/YoursVersicles/YourVersicles"
 
 
 export default function NavegationRouter(){

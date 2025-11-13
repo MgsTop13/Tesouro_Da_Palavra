@@ -1,0 +1,21 @@
+.Main-Home{
+    --BgColor: #063638;
+    --TextColor: #E2D6D6;
+    --ButtonBg: #F3701E;
+    --CardBg: #4B607F;
+    
+
+    background-color: var(--BgColor);
+    min-height: 100vh;
+
+    .versicleDaily{
+        width: 100%;
+        max-width: 458px;
+        background-color: var(--CardBg);
+        color: var(--TextColor);
+        button{
+            border: 0px;
+            background-color: var(--ButtonBg);
+        }
+    }
+}

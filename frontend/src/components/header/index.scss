@@ -1,0 +1,10 @@
+.Header-Home{
+    --BgColor: #0E6063;
+    --ColorText: #E2D6D6;
+    --BottomShadow: 0px 10px 4px #051F20;
+
+    min-height: 65px;
+    width: 100%;
+    background-color: var(--BgColor);
+    box-shadow: var(--BottomShadow);
+}
