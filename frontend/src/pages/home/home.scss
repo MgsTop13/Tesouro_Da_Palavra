@@ -1,8 +1,12 @@
 .Main-Home{
     --BgColor: #063638;
     --TextColor: #E2D6D6;
+    --TextButton: #FFFFFF;
     --ButtonBg: #F3701E;
     --CardBg: #4B607F;
+    --ButtonBorder: #000000;
+    --CardBgShadow: -4px 5px 4px #00000070;
+    --CardBgShadowHover: -9px 9px 4px #000000a1;
     
 
     background-color: var(--BgColor);
@@ -11,11 +15,54 @@
     .versicleDaily{
         width: 100%;
         max-width: 458px;
+        margin: 45px;
         background-color: var(--CardBg);
         color: var(--TextColor);
-        button{
-            border: 0px;
-            background-color: var(--ButtonBg);
+        border-radius: 25px;
+        padding: 25px;
+        box-shadow: var(--CardBgShadow);
+        transition: 350ms;
+        flex-wrap: wrap;    
+
+        &:hover{
+            box-shadow: var(--CardBgShadowHover);
+            transform: translateY(-8px);
         }
+
+        .info{
+            border: 0px;
+            max-width: 150px;
+            width: 100%;
+            height: 35px;
+            border-radius: 30px;
+            position: relative;
+            left: 45%;
+            transform: translate(-45%, 120%);
+            background-color: var(--ButtonBg);
+            box-shadow: var(--CardBgShadow);
+            font-size: 1rem;
+            color: var(--TextButton);
+            border: 1px solid var(--ButtonBorder);
+            transition: 200ms;
+
+            &:hover{
+                box-shadow: var(--CardBgShadowHover);
+            }
+        }
+    }
+
+    .title{
+        color: var(--TextColor);
+        text-align: center;
+    }
+}
+
+@media (max-width: 426px) {
+    .Main-Home{
+        .versicleDaily{
+            margin: 25px;
+            width: 90%;
+        }
+        display: grid;
     }
 }

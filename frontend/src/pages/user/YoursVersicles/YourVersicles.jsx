@@ -1,4 +1,5 @@
-import Cabecalho from "../../../components/header"
+import Cabecalho from "../../../components/header/"
+
 import {Link} from "react-router"
 import "./YourVersicles.scss"
 

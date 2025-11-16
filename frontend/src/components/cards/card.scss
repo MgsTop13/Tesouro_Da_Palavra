@@ -1,0 +1,150 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+    align-items: center;
+    height: 150px;
+
+    --CardBgShadow: -4px 5px 4px #00000070;
+    --CardBgShadowHover: -9px 9px 4px #000000a1;
+    --ButtonBorder: #000000;
+    
+    .card1 {
+        --CardBg: #335E9E;
+        --Color: #9CE8B0;
+        --Button: #F3701E;
+        --ColorButton: #FFFFFF;
+        border-radius: 25px;
+        text-align: center;
+
+        max-height: 133px;
+        height: 100%;
+        max-width: 160px;
+        width: 100%;
+
+        background-color: var(--CardBg);
+
+        .titleCard {
+            color: var(--Color);
+        }
+
+        .descriptionCard {
+            margin-top: 20px;
+            color: var(--Color);
+        }
+
+        .webPage {
+            margin-top: 38px;
+            border-radius: 25px;
+            max-width: 129px;
+            width: 100%;
+            max-height: 33px;
+            height: 100%;
+            background-color: var(--Button);
+            color: var(--ColorButton);
+            text-decoration: none;
+        }
+
+    }
+
+    .card2 {
+        --CardBg: #9C3C3C;
+        --Color: #EDF274;
+        --Button: #F3701E;
+        --ColorButton: #FFFFFF;
+        border-radius: 25px;
+        text-align: center;
+
+
+        max-height: 133px;
+        height: 100%;
+        max-width: 160px;
+        width: 100%;
+
+        background-color: var(--CardBg);
+
+        .titleCard {
+            color: var(--Color);
+        }
+
+        .descriptionCard {
+            margin-top: 10px;
+            color: var(--Color);
+        }
+
+        .webPage {
+            margin-top: 25px;
+            border-radius: 25px;
+            max-width: 129px;
+            width: 100%;
+            max-height: 33px;
+            height: 100%;
+            background-color: var(--Button);
+            color: var(--ColorButton);
+            text-decoration: none;
+        }
+
+    }
+
+    .card3 {
+        --CardBg: #ADADAD;
+        --Color: #285C0F;
+        --Button: #F3701E;
+        --ColorButton: #FFFFFF;
+        border-radius: 25px;
+        text-align: center;
+
+        max-height: 133px;
+        height: 100%;
+        max-width: 160px;
+        width: 100%;
+
+        background-color: var(--CardBg);
+
+        .titleCard {
+            color: var(--Color);
+        }
+
+        .descriptionCard {
+            color: var(--Color);
+            margin-top: 9px;
+        }
+
+        .webPage {
+            max-width: 129px;
+            width: 100%;
+            max-height: 33px;
+            height: 100%;
+            background-color: var(--Button);
+            color: var(--ColorButton);
+            text-decoration: none;
+            margin-top: 25px;
+            border-radius: 25px;
+        }
+
+    }
+
+    .card1, .card2, .card3{
+        box-shadow: var(--CardBgShadow);
+        transition: 450ms;
+        &:hover{
+            box-shadow: var(--CardBgShadowHover);
+            transform: translateY(-10px);
+        }
+
+        .webPage{
+            border: 1px solid var(--ButtonBorder);
+            box-shadow: var(--CardBgShadow);
+
+            &:hover{
+                cursor: pointer;
+            }
+            .info{
+                color: var(--ColorButton);
+                text-decoration: none;
+
+            }
+        }
+    }
+}

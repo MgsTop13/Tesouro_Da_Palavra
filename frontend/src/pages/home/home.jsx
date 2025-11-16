@@ -1,4 +1,5 @@
 import Cabecalho from "../../components/header"
+import Cards from "../../components/cards/card"     
 import {Link} from "react-router"
 import "../../scss/global.scss"
 import "./home.scss"
@@ -6,7 +7,7 @@ import "./home.scss"
 export default function Home(){
     return(
         <main className="Main-Home">
-            <Cabecalho />
+            <Cabecalho   />
 
             <div className="versicleDaily">
                 <h1 className="titleCard">Felicidade</h1>
@@ -16,24 +17,9 @@ export default function Home(){
                 <button className="info">Veja mais</button>
             </div>
 
-            <h1 className="title">Versículo Global</h1>
+            <h1 className="title">Versículos - Global</h1>
 
-            <section className="cards">
-                <div className="sad">
-                    <h1 className="titleCard2">Tristeza</h1>
-                    <button className="button">Fique alegre!</button>
-                </div>
-
-                <div className="anger">
-                    <h1 className="titleCard2">Raiva</h1>
-                    <button className="button">Se acalme!</button>
-                </div>
-
-                <div className="peace">
-                    <h1 className="titleCard2">Paz</h1>
-                    <button className="button">N sei</button>
-                </div>
-            </section>
+            <Cards />
         </main>
     )
 }
