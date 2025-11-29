@@ -1,16 +1,3 @@
-/*
-create database Mgs;
-use Mgs;
-
-create table tb_Vers(
-    id_Vers int primary key auto_increment,
-    sentimento varchar(50),
-    descricao varchar(255),
-    desc_vers varchar(255),
-	vers varchar(255)
-);
-*/
-
 import {connection} from "../connections.js";
 
 export async function ListTable(){

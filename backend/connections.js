@@ -2,7 +2,7 @@ import mysql from "mysql2/promise";
 
 const connection = await mysql.createConnection({
     local: "localhost",
-    user: "root",
+    user: "Mgs",
     password: "1234",
     database: "Mgs"
 })
@@ -17,9 +17,9 @@ export { connection }
         password: "Potato10!",
         database: "Mgs"
 
-    Frei:
+    PC:
         local: "localhost",
-        user: "root",
+        user: "Mgs",
         password: "1234",
         database: "Mgs"
 
