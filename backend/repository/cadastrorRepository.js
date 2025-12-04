@@ -42,3 +42,22 @@ export async function RecuperarSenha(dadosUser){
         dadosUser.idUser
     ])
 }
+
+export async function NomeIgual(name){
+    const command = `
+        select name from cadastro
+        where name = ?
+    `
+
+    const [nomesExistentes] = await connection.query(command, name)
+    return nomesExistentes[0];
+}
+
+export async function emailIgual(email){
+    const command = `
+        select email from cadastro
+            where email = ?
+    `
+    const [emailsExistentes] = await connection.query(command, email);
+    return emailsExistentes[0];
+}

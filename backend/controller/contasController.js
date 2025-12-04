@@ -8,18 +8,21 @@ const endpoints = Router();
 
 endpoints.post('/Cadastro', async (req,res) => {
     const dados = req.body;
-    console.log(dados)
     try{
-        const dadosBanco = await Cadastro.DadosUser();
-        console.log(dadosBanco)
-
-        const IdUser = await Cadastro.CadastroUser(dados);
-        res.send({NewID: IdUser});
+        const emailsExistentes = await Cadastro.emailIgual(dados.email);
+        const nomesExistentes = await Cadastro.NomeIgual(dados.name);
         
-        
-
+        if(nomesExistentes.name === dados.name){
+            res.send("Já existe um usuario com esse nome!")
+        } else if(emailsExistentes.email === dados.email){
+            res.send("Já existe um usuario com esse email!")
+        } else if(emailsExistentes.email === undefined || nomesExistentes.name === undefined){
+            const IdUser = await Cadastro.CadastroUser(dados);
+            res.send({NewID: IdUser});
+        } 
     } catch(error){
-            res.status(500).send({OlhaOError: error.message});
+         res.status(500).send({OlhaOError: error.message});
+         console.error(error)
     }
     
 })
@@ -54,14 +57,20 @@ endpoints.get('/Login',  async (req,res) => {
     }
 })
 
-endpoints.put('/RecuperarSenha', async (req,res) => {
+endpoints.put('/RecuperarSenha/:idUser', async (req,res) => {
     const dados = req.body;
+    const idUser = req.params.idUser;
     
     try{
-        const palavraBanco = await Cadastro.PalavraRecuperacao(dados.palavraRecuperacao, dados.IdUser);
-        res.send({})
+        const palavraBanco = await Cadastro.DadosUser(idUser);
+        const dadosUser = palavraBanco[0];
+        res.send(dadosUser)
+        if(dadosUser === undefined){
+            res.status(404).send("Usuário não encontrado!")
+        }
     } catch(error){
         res.status(500).send({OlhaOError: error.message})
+        console.error(error)
     }
 })
 
