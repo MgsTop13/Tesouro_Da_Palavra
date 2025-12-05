@@ -1,6 +1,7 @@
-import Account from "/imgs/user.png"
-import Lupa from "/imgs/Lupa.png"
-import Menu from "/imgs/menu.png"
+import Lupa from "/imgs/Vector2.png"
+import Account from "/imgs/Vector.png"
+import Menu from "/imgs/Vector1.png"
+
 import { Link } from "react-router"
 import './index.scss'
 import { useState, useEffect } from "react"
@@ -32,7 +33,7 @@ export default function Cabecalho() {
             {ehmobile && (
                 <nav>
                     <img className="user" src={Account} />
-                    <img className="lupa" src={Lupa} />
+                    <img className="lupa" width={'50px'} src={Lupa} />
                     <img onClick={AtivarMenu} src={menuAberto ? Lupa : Menu} />
                 </nav>
             )}
