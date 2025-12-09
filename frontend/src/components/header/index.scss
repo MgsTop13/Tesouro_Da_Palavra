@@ -7,4 +7,11 @@
     width: 100%;
     background-color: var(--BgColor);
     box-shadow: var(--BottomShadow);
+
+    .nav-Header{
+        display: flex;
+        align-items: center;
+        min-height: 65px;
+    }
+    
 }

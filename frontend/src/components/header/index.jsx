@@ -3,7 +3,7 @@ import Lupa from "/imgs/Lupa.png"
 import Menu from "/imgs/menu.png"
 import { Link } from "react-router"
 import './index.scss'
-import { useState, useEffect } from "react"
+import { useState, useEffect, useEffectEvent } from "react"
 
 export default function Cabecalho() {
     const [menuAberto, setMenuAberto] = useState(false);
@@ -15,22 +15,23 @@ export default function Cabecalho() {
     }
 
     //Verificar se é mobile ou não
-    useEffect(() => {
-        function verificarTamanho() {
-            const mobile = window.innerWidth < 769;
+    const VerificarTamanho = useEffectEvent(() => {
+        const mobile = window.innerWidth < 769;
             setEhMobile(mobile);
-            if (!mobile) setMenuAberto(false); //Ele deixa de existir no desktop(pc)
-        };
+            if (!mobile) {
+                setMenuAberto(false)
+            }; //Ele deixa de existir no desktop(pc)
+    })
 
-
-        window.addEventListener('resize', verificarTamanho);
-        return () => window.removeEventListener('resize', verificarTamanho);
+    useEffect(() => {
+        window.addEventListener('resize', VerificarTamanho);
+        return () => window.removeEventListener('resize', VerificarTamanho);
     }, []);
 
     return (
         <header className="Header-Home">
             {ehmobile && (
-                <nav>
+                <nav className="nav-Header">
                     <img className="user" src={Account} />
                     <img className="lupa" src={Lupa} />
                     <img onClick={AtivarMenu} src={menuAberto ? Lupa : Menu} />
@@ -45,7 +46,7 @@ export default function Cabecalho() {
             )}
 
             {!ehmobile && (
-                <nav>
+                <nav className="nav-Header">
                     <img className="user" src={Account} />
                     <img className="lupa" src={Lupa} />
                 </nav>

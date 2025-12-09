@@ -30,7 +30,7 @@ export async function DadosUser(idUser){
     return dados;
 }
 
-export async function RecuperarSenha(dadosUser){
+export async function RecuperarSenha(dadosUser, novaSenha){
     const AtualizarSenha = `
         UPDATE cadastro
             SET password = MD5(?)
@@ -38,9 +38,10 @@ export async function RecuperarSenha(dadosUser){
     `
 
     const [sucesso] = await connection.query(AtualizarSenha, [
-        dadosUser.password, 
-        dadosUser.idUser
+        novaSenha,
+        dadosUser.id_user
     ])
+    return sucesso
 }
 
 export async function NomeIgual(name){

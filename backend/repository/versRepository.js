@@ -70,3 +70,63 @@ export async function DelVers(idVers, idUser) {
     const [info] = await connection.query(Command, [idVers, idUser]);
     return info
 }
+
+export async function FavoritarVersiculoUser(idUser, idVersiculo) {
+    const command = `
+        UPDATE VersiculosUser
+            SET favorito = TRUE
+        WHERE id_user = ? AND id_Vers = ?
+    `
+    const [info] = await connection.query(command, [idUser, idVersiculo]);
+    return info;
+}
+
+export async function DesfavoritarVersiculoUser(idUser, idVersiculo) {
+    const command = `
+        UPDATE VersiculosUser
+            SET favorito = FALSE
+        WHERE id_user = ? AND id_Vers = ?
+    `
+    const [info] = await connection.query(command, [idUser, idVersiculo]);
+    return info;
+}
+
+export async function FavoritarVersiculoGlobal(idUser, idVersiculo) {
+    const command = `
+        UPDATE VersiculosGlobal
+            SET favorito = TRUE
+        WHERE id_user = ? AND id_Vers = ?
+    `
+    const [info] = await connection.query(command, [idUser, idVersiculo]);
+    return info;
+}
+
+export async function DesfavoritarVersiculoGlobal(idUser, idVersiculo) {
+    const command = `
+        UPDATE VersiculosGlobal
+            SET favorito = FALSE
+        WHERE id_user = ? AND id_Vers = ?
+    `
+    const [info] = await connection.query(command, [idUser, idVersiculo]);
+    return info;
+}
+
+export async function ListarVersiculosFavoritos(idUser){
+    const command = `
+        SELECT * FROM VersiculosUser
+            WHERE favorito = TRUE and id_user = ?
+    `
+
+    const [info] = await connection.query(command, [idUser]);
+    return info;
+}
+
+export async function ListarVersiculosFavoritosGlobal(idUser){
+    const command = `
+        SELECT * FROM VersiculosGlobal
+            WHERE favorito = TRUE and id_user = ?
+    `
+
+    const [info] = await connection.query(command, [idUser]);
+    return info;
+}

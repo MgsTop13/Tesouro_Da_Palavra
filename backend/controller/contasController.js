@@ -12,11 +12,11 @@ endpoints.post('/Cadastro', async (req,res) => {
         const emailsExistentes = await Cadastro.emailIgual(dados.email);
         const nomesExistentes = await Cadastro.NomeIgual(dados.name);
         
-        if(nomesExistentes.name === dados.name){
+        if(nomesExistentes === dados.name){
             res.send("Já existe um usuario com esse nome!")
-        } else if(emailsExistentes.email === dados.email){
+        } else if(emailsExistentes === dados.email){
             res.send("Já existe um usuario com esse email!")
-        } else if(emailsExistentes.email === undefined || nomesExistentes.name === undefined){
+        } else if(emailsExistentes === undefined || nomesExistentes === undefined){
             const IdUser = await Cadastro.CadastroUser(dados);
             res.send({NewID: IdUser});
         } 
@@ -58,16 +58,25 @@ endpoints.get('/Login',  async (req,res) => {
 })
 
 endpoints.put('/RecuperarSenha/:idUser', async (req,res) => {
-    const dados = req.body;
+    const {novaSenha, palavraRecuperacao} = req.body;
     const idUser = req.params.idUser;
     
     try{
-        const palavraBanco = await Cadastro.DadosUser(idUser);
-        const dadosUser = palavraBanco[0];
-        res.send(dadosUser)
-        if(dadosUser === undefined){
-            res.status(404).send("Usuário não encontrado!")
-        }
+        //Pega os dados do usuario no banco atraves do id
+            const palavraBanco = await Cadastro.DadosUser(idUser); 
+        
+        //Pega o primeiro resultado do array
+            const dadosUser = palavraBanco[0]; 
+        
+            if(palavraRecuperacao !== dadosUser.palavraRecuperacao){
+                res.status(403).send("A palavra de recuperação tá errada!")
+            } else if(palavraRecuperacao === dadosUser.palavraRecuperacao){
+                const palavraRecuperada = await Cadastro.RecuperarSenha(dadosUser, novaSenha) //Envia pro banco a nova senha que deve ser alterada e os dados do usuario
+                res.send(palavraRecuperada)
+            }
+            if(dadosUser === undefined){
+                res.status(404).send("Usuário não encontrado!")
+            }
     } catch(error){
         res.status(500).send({OlhaOError: error.message})
         console.error(error)
