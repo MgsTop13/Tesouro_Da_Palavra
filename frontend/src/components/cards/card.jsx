@@ -7,7 +7,7 @@ export default function Cards() {
             <div className="card1">
                 <h1 className="titleCard">Tristeza</h1>
                 <h3 className="descriptionCard">É só ser feliz pô!</h3>
-                <button className="webPage">
+                <button className="webPage b1">
                     <Link className="info">Ir a página!</Link>
                 </button>
             </div>
@@ -15,7 +15,7 @@ export default function Cards() {
             <div className="card2">
                 <h1 className="titleCard">Raiva</h1>
                 <h3 className="descriptionCard">Não mate seu colega ao seu lado!</h3>
-                <button className="webPage">
+                <button className="webPage b2">
                     <Link className="info">Ir a página!</Link>
                 </button>
             </div>
@@ -23,7 +23,7 @@ export default function Cards() {
             <div className="card3">
                 <h1 className="titleCard">Paz</h1>
                 <h3 className="descriptionCard">Oque fazer para obter paz?</h3>
-                <button className="webPage">
+                <button className="webPage b3">
                     <Link className="info">Ir a página!</Link>
                 </button>
             </div>

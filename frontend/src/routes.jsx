@@ -3,7 +3,7 @@ import Home from "./pages/home/home"
 import Insert from "./pages/user/InsertVersicle/Insert"
 import Edit from "./pages/user/EditVersicle/Edit"
 import Remove from "./pages/user/RemoveVersicle/Remove"
-import VersiclesGlobal from "./pages/Versicles/VersiclesGlobal"
+import VersiclesGlobal from "./pages/VersiculosGlobal/VersiclesGlobal"
 import YourVersicles from "./pages/user/YoursVersicles/YourVersicles"
 
 

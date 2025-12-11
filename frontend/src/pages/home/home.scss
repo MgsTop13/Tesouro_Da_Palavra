@@ -10,7 +10,7 @@
     
 
     background-color: var(--BgColor);
-    min-height: 100vh;
+    min-height: 110vh;
 
     .versicleDaily{
         width: 100%;
@@ -47,6 +47,11 @@
 
             &:hover{
                 box-shadow: var(--CardBgShadowHover);
+            }
+
+            .Link{
+                text-decoration: none;
+                color: var(--TextButton);
             }
         }
     }

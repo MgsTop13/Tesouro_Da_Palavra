@@ -1,0 +1,50 @@
+footer{
+    --textColor: #FFFFFF;
+    --backgroundPage: #0E595C;
+    max-width: 100%;
+    margin-top: 50px;
+    min-height: 100%;
+    height: 100px;
+    color: var(--textColor);
+    box-shadow: 0px -4px 15px #00000088;
+    background: linear-gradient(to bottom,  #063638, #0E595C);
+    position: relative;
+    bottom: 0;
+
+
+
+    .icones{
+        display: flex;
+        max-width: 50%;
+        height: 100px;
+        min-height: 100%;
+        margin-left: 25%;
+        align-items: center;
+        justify-content: space-evenly;
+
+        .icon{
+            border-radius: 50%;
+            margin-bottom: 50px;
+            position: relative;
+            background-color: var(--backgroundPage);
+            box-shadow: 0px 6px 2px #00000091;
+            transition: 250ms;
+
+            &:hover{
+                box-shadow: 0px 10px 5px #00000091;
+            }
+        }
+
+        .icon1, .icon2, .icon3, .icon4,.icon5{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: 250ms;
+            &:hover{
+                transform: translateY(-5px);
+                cursor: pointer;
+            }
+        }
+    }
+}
