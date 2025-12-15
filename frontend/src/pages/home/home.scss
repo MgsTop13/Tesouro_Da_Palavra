@@ -1,4 +1,4 @@
-.Main-Home{
+.Main-Home {
     --BgColor: #063638;
     --TextColor: #E2D6D6;
     --TextButton: #FFFFFF;
@@ -7,12 +7,12 @@
     --ButtonBorder: #000000;
     --CardBgShadow: -4px 5px 4px #00000070;
     --CardBgShadowHover: -9px 9px 4px #000000a1;
-    
 
     background-color: var(--BgColor);
     min-height: 110vh;
+    color: var(--TextColor);
 
-    .versicleDaily{
+    .versicleDaily {
         width: 100%;
         max-width: 458px;
         margin: 45px;
@@ -22,52 +22,53 @@
         padding: 25px;
         box-shadow: var(--CardBgShadow);
         transition: 350ms;
-        flex-wrap: wrap;    
+        flex-wrap: wrap;
 
-        &:hover{
+        &:hover {
             box-shadow: var(--CardBgShadowHover);
             transform: translateY(-8px);
         }
 
-        .info{
+        .info {
             border: 0px;
             max-width: 150px;
             width: 100%;
             height: 35px;
-            border-radius: 30px;
+            font-size: 1rem;
+            border-radius: 25px;
             position: relative;
-            left: 45%;
-            transform: translate(-45%, 120%);
+            transform: translate(100%, 120%);
             background-color: var(--ButtonBg);
             box-shadow: var(--CardBgShadow);
-            font-size: 1rem;
             color: var(--TextButton);
             border: 1px solid var(--ButtonBorder);
             transition: 200ms;
 
-            &:hover{
+            &:hover {
                 box-shadow: var(--CardBgShadowHover);
             }
 
-            .Link{
+            .Link {
                 text-decoration: none;
                 color: var(--TextButton);
             }
         }
-    }
 
-    .title{
-        color: var(--TextColor);
-        text-align: center;
     }
+        .title {
+            color: var(--TextColor);
+            text-align: center;
+        }
+    
 }
 
 @media (max-width: 426px) {
-    .Main-Home{
-        .versicleDaily{
+    .Main-Home {
+        .versicleDaily {
             margin: 25px;
             width: 90%;
         }
+
         display: grid;
     }
 }

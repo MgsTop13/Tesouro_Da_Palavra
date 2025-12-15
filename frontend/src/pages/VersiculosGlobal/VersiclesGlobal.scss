@@ -1,4 +1,61 @@
-.main-Global{
-    min-height: 100vh !important;
-    height: 100%;
+.main-Global {
+    --bgColor: #063638;
+    --fontColor: #FFFFFF;
+    --inputColor: #e8d8c9bb;
+    --colorInput: #1e1e1e9a;
+    --buttonColor: #F3701E;
+    background-color: var(--bgColor);
+    color: var(--fontColor);
+    min-height: 110vh;
+
+    .nomeUser {
+        padding: 30px;
+        font-size: 2rem
+    }
+
+    .CarregarVersiculos {
+        width: 60%;
+        margin-left: 20%;
+        text-align: center;
+
+        .infoText {
+            .descricaoSite {
+                width: 75%;
+                font-size: 1.2rem;
+                margin-left: 12%;
+            }
+        }
+
+        .tituloSentimento {
+            font-size: 1.6rem;
+            margin-top: 20px;
+        }
+
+        .sentimento {
+            background-color: var(--inputColor);
+            color: var(--colorInput);
+            width: 227px;
+            height: 30px;
+            border-radius: 20px;
+            padding-left: 5px;
+            margin-bottom: 30px;
+        }
+
+        .carregarVersiculos {
+            background-color: var(--buttonColor);
+            border: none;
+            border-radius: 17px;
+            box-shadow: -4px 5px 4px #00000083;
+            color: var(--fontColor);
+            width: 157px;
+            height: 42px;
+            margin: auto;
+            display: block;
+        }
+    }
+
+    footer {
+        position: relative;
+        margin-top: 25%;
+    }
 }

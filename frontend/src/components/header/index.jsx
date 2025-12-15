@@ -1,8 +1,7 @@
-import Account from "/imgs/user.png"
-import Lupa from "/imgs/Lupa.png"
+import './index.scss'
 import Menu from "/imgs/menu.png"
 import { Link } from "react-router"
-import './index.scss'
+import Account from "/imgs/user.png"
 import { useState, useEffect, useEffectEvent } from "react"
 
 export default function Cabecalho() {
@@ -33,7 +32,6 @@ export default function Cabecalho() {
             {ehmobile && (
                 <nav className="nav-Header">
                     <img className="user" src={Account} />
-                    <img className="lupa" src={Lupa} />
                     <img onClick={AtivarMenu} src={menuAberto ? Lupa : Menu} />
                 </nav>
             )}
@@ -48,7 +46,19 @@ export default function Cabecalho() {
             {!ehmobile && (
                 <nav className="nav-Header">
                     <img className="user" src={Account} />
-                    <img className="lupa" src={Lupa} />
+                    <div className="item1">
+                        <Link></Link> {/*Pagina de jejuns*/}
+                    </div>
+
+                    <div className="item2">
+                        <Link className='link' to={'/Login'}>Login</Link> {/*Isso deve ser do login*/}
+                        <Link></Link> {/*Pagina de sobre*/}
+                    </div>
+
+                    <div className="item3">
+                        <Link></Link> {/*Pagina de configurações da conta */}
+                        <Link></Link> {/*Pagina de versiculos favoritos*/}
+                    </div>
                 </nav>
             )}
         </header>

@@ -13,11 +13,13 @@
 4.Recuperador de senhas
     -Nao confie no usuario, ele sempre quebrará algo
 
+5.Tabela de jejuns
+    -Pegar o proposito do jejum, descricao dele, versiculos que te marcaram, e oque voce aprendeu nele
+    -Contera com o Id do usuario
+
+
 FEITO:
 1, 2, 4
 
 FALTA:
-3
-
-Oque mudar futuramente?
-    -Ao atualizar a senha, usar o nome de usuario ao inves do ID
+3, 5

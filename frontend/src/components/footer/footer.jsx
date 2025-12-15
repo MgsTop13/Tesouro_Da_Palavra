@@ -1,18 +1,20 @@
+import { Navigate, useNavigate, Link } from "react-router"
 import Insert from "/icons/Insert.png"
 import Delete from "/icons/Delete.png"
 import Edit from "/icons/Edit.png"
 import Icon from "/icons/Icon.png"
 import List from "/icons/List.png"
 import "./footer.scss"
-
 export default function Footer(){
-    return(
+    const navigate = useNavigate();
+
+    return( 
         <footer>
             <div className="icones">
 
             <nav className="icon1">
                 <img src={Edit} />
-                <h3>Editar</h3>
+                <h3><Link to={'/Edit'}> Editar</Link></h3>
             </nav>
 
             <nav className="icon2">

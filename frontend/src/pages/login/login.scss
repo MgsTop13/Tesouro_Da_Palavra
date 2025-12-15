@@ -1,0 +1,78 @@
+.login {
+    --BgColor: #063638;
+    --TextColor: #E2D6D6;
+    --TextButton: #FFFFFF;
+    --ButtonBg: #F3701E;
+    --CardBg: #4B607F;
+    --ButtonBorder: #000000;
+    --CardBgShadow: -4px 5px 4px #00000070;
+    --CardBgShadowHover: -9px 9px 4px #000000a1;
+    --inputBg: #e8d8c9a4;
+
+    background-color: var(--BgColor);
+    min-height: 100vh;
+
+    .title{
+        color: var(--TextColor);
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .dados-Login {
+        color: var(--TextColor);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        margin-top: 20px;
+        gap: 20px;
+
+        .input {
+            max-width: 332px;
+            width: 100%;
+            height: 70px;
+            input {
+                margin-top: 5px;
+                padding-left: 25px;
+                max-height: 37px;
+                border-radius: 25px;
+                border: none;
+                height: 100%;
+                width: 100%;
+                padding-right: 16px;
+                background-color: var(--inputBg);
+            }
+        }
+    }
+
+    .opcoes{
+        display: flex;
+        flex-direction: column;
+        font-size: 0.8rem;
+        text-align: start;
+        flex-wrap: wrap;
+    }
+
+    .logar{
+        background-color: var(--ButtonBg);
+        color: var(--TextButton);
+        border: 1px solid var(--ButtonBorder);
+        box-shadow: var(--CardBgShadow);
+        border: none;
+        height: 37px;
+        width: 170px;
+        position: absolute;
+        top: 75%;
+        border-radius: 15px;
+        transition: 450ms;
+        &:hover{
+            transform: translateY(-4px);
+        }
+    }
+
+    footer{
+        position: relative;
+        margin-top: 10%;
+    }
+
+}
