@@ -16,10 +16,10 @@ export default function Cabecalho() {
     //Verificar se é mobile ou não
     const VerificarTamanho = useEffectEvent(() => {
         const mobile = window.innerWidth < 769;
-            setEhMobile(mobile);
-            if (!mobile) {
-                setMenuAberto(false)
-            }; //Ele deixa de existir no desktop(pc)
+        setEhMobile(mobile);
+        if (!mobile) {
+            setMenuAberto(false)
+        }; //Ele deixa de existir no desktop(pc)
     })
 
     useEffect(() => {
@@ -46,18 +46,21 @@ export default function Cabecalho() {
             {!ehmobile && (
                 <nav className="nav-Header">
                     <img className="user" src={Account} />
-                    <div className="item1">
-                        <Link></Link> {/*Pagina de jejuns*/}
-                    </div>
+                    <div className="itens">
 
-                    <div className="item2">
-                        <Link className='link' to={'/Login'}>Login</Link> {/*Isso deve ser do login*/}
-                        <Link></Link> {/*Pagina de sobre*/}
-                    </div>
+                        <div className="item1">
+                            <Link className='link'>Seus jejuns</Link> {/*Pagina de jejuns*/}
+                        </div>
 
-                    <div className="item3">
-                        <Link></Link> {/*Pagina de configurações da conta */}
-                        <Link></Link> {/*Pagina de versiculos favoritos*/}
+                        <div className="item2">
+                            <Link className='link' to={'/Login'}>Login</Link> {/*Isso deve ser do login*/}
+                            <Link className='link'>Sobre o site</Link> {/*Pagina de sobre*/}
+                        </div>
+
+                        <div className="item3">
+                            <Link className='link'>Configurações da conta</Link> {/*Pagina de configurações da conta */}
+                            <Link className='link'>Favoritos</Link> {/*Pagina de versiculos favoritos*/}
+                        </div>
                     </div>
                 </nav>
             )}

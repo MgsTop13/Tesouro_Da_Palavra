@@ -42,7 +42,16 @@ footer{
             transition: 250ms;
             &:hover{
                 transform: translateY(-5px);
-                cursor: pointer;
+            }
+
+            .link{
+                color: var(--textColor);
+                text-decoration: none;
+
+                &:hover{
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
             }
         }
     }

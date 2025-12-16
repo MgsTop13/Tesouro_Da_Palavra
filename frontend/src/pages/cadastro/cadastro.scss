@@ -8,6 +8,8 @@
     --CardBgShadow: -4px 5px 4px #00000070;
     --CardBgShadowHover: -9px 9px 4px #000000a1;
     --inputBg: #e8d8c9a4;
+    $animation-duration: 450ms;
+    $animation-distance: 30px;
 
     background-color: var(--BgColor);
     min-height: 100vh;
@@ -16,6 +18,28 @@
         margin-top: 50px;
         color: var(--TextColor);
         text-align: center;
+        transition: 450ms;
+
+        //animação ao entrar no site:
+            opacity: 0; //definir as variaveis
+            transform: translateY($animation-distance);
+            animation: slideUp $animation-duration ease-out forwards;
+
+            @keyframes slideUp{
+                0%{
+                    opacity: 0;
+                    transform: translateY($animation-distance);
+                }
+                
+                50%{
+                    opacity: 0.50;
+                }
+
+                100%{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
     }
 
     .dados {
@@ -82,6 +106,7 @@
         &:hover{
             transform: translateY(-6px);
         }
+
     }
 
     footer {

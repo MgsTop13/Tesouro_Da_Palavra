@@ -1,9 +1,10 @@
 import Footer from "../../components/footer/footer.jsx"
 import Cabecalho from "../../components/header"
-import { useNavigate } from "react-router"
+import { useNavigate, Link } from "react-router"
 import { useState } from "react"
 import "../../scss/global.scss"
 import "./login.scss"
+
 
 
 export default function Login() {
@@ -45,7 +46,7 @@ export default function Login() {
                     />
                 </div>
                 <div className="opcoes">
-                    <h3>Não tem uma conta? Faça sua conta aqui!</h3>
+                    <h3>Não tem uma conta? Faça sua conta <Link className="link" to={"/register"}>Aqui!</Link></h3>
                     <h3>Esqueceu sua senha?</h3>
                 </div>
                 <button className="logar">Logar</button>
