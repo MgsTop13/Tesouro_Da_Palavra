@@ -13,13 +13,17 @@ export default function Footer() {
             <div className="icones">
 
                 <nav className="icon1">
-                    <img src={Edit} />
-                    <h3><Link className="link" to={'/Edit'}>Editar</Link></h3>
+                    <Link className="link" to={'/Edit'}>
+                        <img src={Edit} />
+                        <h3>Editar</h3>
+                    </Link>
                 </nav>
 
                 <nav className="icon2">
-                    <img src={Insert} />
-                    <h3><Link className="link" to={'/Insert'}>Inserir</Link></h3>
+                    <Link className="link" to={'/Insert'}>
+                        <img src={Insert} />
+                        <h3>Inserir</h3>
+                    </Link>
                 </nav>
 
                 <nav className="icon">
@@ -27,13 +31,17 @@ export default function Footer() {
                 </nav>
 
                 <nav className="icon4">
-                    <img src={List} />
-                    <h3><Link className="link" to={'/YourVersicles'}>Listar</Link></h3>
+                    <Link className="link" to={'/YourVersicles'}>
+                        <img src={List} />
+                        <h3>Listar</h3>
+                    </Link>
                 </nav>
 
                 <nav className="icon5">
-                    <img src={Delete} />
-                    <h3><Link className="link" to={'/Remove'}>Remover</Link></h3>
+                    <Link className="link" to={'/Remove'}>
+                        <img src={Delete} />
+                        <h3>Remover</h3>
+                    </Link>
                 </nav>
             </div>
         </footer>

@@ -1,13 +1,13 @@
-import Footer from "../../components/footer/footer"
-import Cabecalho from "../../components/header"
-import {Link} from "react-router"
-import "./VersiclesGlobal.scss"
 import "../../scss/global.scss"
+import "./VersiclesGlobal.scss"
+import {Link} from "react-router"
+import Footer from "../../components/footer/footer"
+import Cabecalho2 from "../../components/headerPages"
 
 export default function VersiclesGlobal(){
     return(
         <main className="main-Global">
-            <Cabecalho />
+            <Cabecalho2 />
 
             <h1 className="nomeUser">Olá usuario!</h1>
 

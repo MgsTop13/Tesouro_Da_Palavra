@@ -1,5 +1,5 @@
 import Footer from "../../components/footer/footer.jsx"
-import Cabecalho from "../../components/header"
+import Cabecalho2 from "../../components/headerPages"
 import { useNavigate, Link } from "react-router"
 import { useState } from "react"
 import "../../scss/global.scss"
@@ -14,7 +14,7 @@ export default function Login() {
 
     return (
         <main className="login">
-            <Cabecalho />
+            <Cabecalho2 />
             <h1 className="title">Login</h1>
 
             <section className="dados-Login">

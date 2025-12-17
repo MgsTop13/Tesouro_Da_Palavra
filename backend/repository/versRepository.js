@@ -11,25 +11,24 @@ export async function ListarVersiculosUser(idUser) {
 
 export async function VerificarVersiculo(Versiculo){
     const command = `
-        SELECT vers FROM VersiculosUser
+        SELECT vers, id_Vers FROM VersiculosUser
             WHERE vers = ?
     `
 
     const [versiculos] = await connection.query(command,Versiculo)
-    return versiculos;
+    return versiculos[0];
 }
 
 
 export async function InserirVersiculoUser(Dados) {
     const Command = `
-       INSERT INTO VersiculosUser (id_user, sentimento, descricao, desc_vers, vers, favorito)
+       INSERT INTO VersiculosUser (id_user, sentimento, desc_vers, vers, favorito)
         VALUES (?,?,?,?,?,?)
     `
 
     const [info] = await connection.query(Command, [
         Dados.id_user, 
-        Dados.sentimento, 
-        Dados.descricao, 
+        Dados.sentimento,
         Dados.desc_vers,
         Dados.vers, 
         Dados.favorito
@@ -41,7 +40,6 @@ export async function EditarVersiculos(Dados, idVers) {
     const Command = `
         UPDATE VersiculosUser
             SET sentimento = ?, 
-                    descricao = ?, 
                     desc_vers = ?, 
                     vers = ?, 
                     favorito = ?
@@ -49,8 +47,7 @@ export async function EditarVersiculos(Dados, idVers) {
             
     `
     const [info] = await connection.query(Command, [
-        Dados.sentimento, 
-        Dados.descricao, 
+        Dados.sentimento,  
         Dados.desc_vers, 
         Dados.vers, 
         Dados.favorito,

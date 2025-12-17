@@ -1,9 +1,9 @@
-import Footer from "../../components/footer/footer.jsx"
-import { Link, useNavigate } from "react-router"
-import { useState } from "react"
-import Cabecalho from "../../components/header"
-import "../../scss/global.scss"
 import "./cadastro.scss"
+import "../../scss/global.scss"
+import { useState } from "react"
+import { Link, useNavigate } from "react-router"
+import Footer from "../../components/footer/footer.jsx"
+import Cabecalho2 from "../../components/headerPages"
 
 export default function Cadastro() {
     const [name, setName] = useState('');
@@ -25,7 +25,7 @@ export default function Cadastro() {
     
     return (
         <main className="cadastro">
-            <Cabecalho />
+            <Cabecalho2 />
             <h1 className="title">Cadastro</h1>
 
             <section className="dados">
