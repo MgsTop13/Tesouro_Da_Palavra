@@ -1,16 +1,35 @@
 import Cabecalho2 from "../../../components/headerPages"
-
+import Footer from "../../../components/footer/footer"
 import {Link} from "react-router"
 import "./YourVersicles.scss"
 
 export default function YourVersicles(){
     return(
-        <main>
+        <main className="VersiculosUser">
             <Cabecalho2 />
 
-            <section>
-                <h1>TitleYourVersicles</h1>
+            <h1 className="nomeUser">Olá usuario!</h1>
+
+            <section className="CarregarVersiculos">
+                <div className="infoText">
+                    <h1 className="tituloSite">Versiculos Global</h1>
+                    <p className="descricaoSite">Aqui você acha versiculos publicados para todo o público visualizar e favoritar</p>
+                </div>
+
+                    <h4 className="tituloSentimento">Insira seu sentimento</h4>
+                    <select className="sentimento">
+                        <option value="">
+                            Selecione um sentimento
+                        </option>
+                        <option value="Triste">Triste</option>
+                        <option value="Feliz">Feliz</option>
+                        <option value="Alegre">Alegre</option>
+                    </select>
+
+                    <button className="carregarVersiculos">Carregar</button>
             </section>
+
+            <Footer  />
         </main>
     )
 }

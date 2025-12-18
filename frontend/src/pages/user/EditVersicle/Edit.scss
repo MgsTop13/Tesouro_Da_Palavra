@@ -1,0 +1,166 @@
+.EditarVersiculosUser {
+    --BgColor: #063638;
+    --TextColor: #E2D6D6;
+    --TextButton: #FFFFFF;
+    --ButtonBg: #F3701E;
+    --CardBg: #4B607F;
+    --ButtonBorder: #000000;
+    --CardBgShadow: -4px 5px 4px #00000070;
+    --CardBgShadowHover: -9px 9px 4px #000000a1;
+    --inputBg: #e8d8c9a4;
+
+    background-color: var(--BgColor);
+    min-height: 100vh;
+
+    .nameuser {
+        color: var(--TextColor);
+        text-align: start;
+        margin: 50px;
+        width: 150px;
+        font-size: 1.6rem;
+    }
+
+    .desc {
+        color: var(--TextColor);
+        text-align: center;
+        font-size: 1.4rem;
+    }
+
+    .dadosUser {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        left: 35%;
+        top: 20px;
+        min-height: 210px;
+        width: 30%;
+        height: 100%;
+        gap: 10px;
+        text-align: center;
+        color: var(--TextColor);
+
+        .Sentimento {
+            border-radius: 7px;
+            width: 50%;
+        }
+
+        .input1,
+        .input2,
+        .input3 {
+            input {
+                border-radius: 7px;
+                width: 220px;
+                height: 27px;
+                padding-left: 7px;
+                font-size: 12px;
+            }
+        }
+
+        .input3 {
+            .favorito {
+                width: 80%;
+                font-size: 0.9rem;
+            }
+            display: flex;
+            width: 50%;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+
+            input[type="checkbox"] {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                accent-color: var(--ButtonBg);
+                
+                &:hover {
+                    transform: scale(1.1);
+                    transition: 150ms;
+                }
+            }
+        }
+    }
+
+    footer {
+        position: relative;
+        top: 75px;
+    }
+}
+
+// ============================================
+// MEDIA QUERIES - ORGANIZADAS NO FINAL
+// ============================================
+
+@media screen and (max-width: 1024px) {
+    .EditarVersiculosUser {
+        .dadosUser {
+            left: 30%;
+            width: 40%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .EditarVersiculosUser {
+        .nameuser {
+            margin: 40px;
+            font-size: 1.5rem;
+        }
+        
+        .desc {
+            font-size: 1.3rem;
+        }
+        
+        .dadosUser {
+            left: 25%;
+            width: 50%;
+        }
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .EditarVersiculosUser {
+        .nameuser {
+            margin: 30px;
+            font-size: 1.4rem;
+            width: 120px;
+        }
+        
+        .desc {
+            font-size: 1.2rem;
+        }
+        
+        .dadosUser {
+            left: 15%;
+            width: 70%;
+            top: 15px;
+            
+            .Sentimento {
+                width: 70%;
+            }
+            
+            .input1,
+            .input2,
+            .input3 {
+                input {
+                    width: 200px;
+                    height: 25px;
+                }
+            }
+            
+            .input3 {
+                width: 70%;
+                
+                .favorito {
+                    font-size: 0.85rem;
+                }
+            }
+        }
+        
+        footer {
+            top: 50px;
+        }
+    }
+}

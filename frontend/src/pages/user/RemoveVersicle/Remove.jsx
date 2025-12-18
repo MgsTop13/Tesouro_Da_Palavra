@@ -14,6 +14,8 @@ export default function Remove(){
                 <h1>Coloque o numero de identificador do versiculo</h1>
                 <input type="number" placeholder="7" />
             </div>
+
+            <Footer />
         </main>
     )
 }

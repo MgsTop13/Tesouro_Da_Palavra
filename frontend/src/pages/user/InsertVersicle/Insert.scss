@@ -1,0 +1,297 @@
+.insertVersiculoUser {
+    --BgColor: #063638;
+    --TextColor: #E2D6D6;
+    --TextButton: #FFFFFF;
+    --ButtonBg: #F3701E;
+    --CardBg: #4B607F;
+    --ButtonBorder: #000000;
+    --CardBgShadow: -4px 5px 4px #00000070;
+    --CardBgShadowHover: -9px 9px 4px #000000a1;
+    --inputBg: #e8d8c9a4;
+
+    // Estilos base
+    background-color: var(--BgColor);
+    min-height: 100vh;
+    color: var(--TextColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    // Header/Nome do usuário
+    .nameUser {
+        color: var(--TextColor);
+        text-align: start;
+        margin: 50px 0 20px 50px;
+        width: 100%;
+        max-width: 300px;
+        font-size: 1.6rem;
+        align-self: flex-start;
+    }
+
+    // Descrição
+    .desc {
+        color: var(--TextColor);
+        text-align: center;
+        font-size: 1.4rem;
+        margin-bottom: 40px;
+        width: 80%;
+        max-width: 600px;
+    }
+
+    // Seção de informações do versículo
+    .versiculoInfo {
+        background-color: var(--CardBg);
+        border-radius: 25px;
+        padding: 35px;
+        width: 80%;
+        max-width: 500px;
+        box-shadow: var(--CardBgShadow);
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        margin-bottom: 50px;
+        transition: 350ms;
+
+        &:hover {
+            box-shadow: var(--CardBgShadowHover);
+            transform: translateY(-5px);
+        }
+
+        // Select de sentimento
+        .sentimento {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 7px;
+            border: none;
+            background-color: var(--inputBg);
+            color: #333;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 200ms;
+
+            &:hover {
+                box-shadow: var(--CardBgShadow);
+            }
+
+            &:focus {
+                outline: 2px solid var(--ButtonBg);
+            }
+        }
+
+        // Container dos inputs
+        .input1,
+        .input2,
+        .input3 {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            // Títulos dos inputs
+            .descricaoVers,
+            .versiculo,
+            .favorito {
+                color: var(--TextColor);
+                font-size: 1.1rem;
+                margin: 0;
+                text-align: left;
+            }
+
+            .favorito {
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                font-size: 1rem;
+            }
+
+            // Estilos dos inputs de texto
+            input[type="text"] {
+                width: 100%;
+                padding: 10px 15px;
+                border-radius: 7px;
+                border: none;
+                background-color: var(--inputBg);
+                color: #333;
+                font-size: 1rem;
+                transition: 200ms;
+
+                &::placeholder {
+                    color: #666;
+                    font-size: 0.9rem;
+                }
+
+                &:hover {
+                    box-shadow: var(--CardBgShadow);
+                }
+
+                &:focus {
+                    outline: 2px solid var(--ButtonBg);
+                    box-shadow: var(--CardBgShadowHover);
+                }
+            }
+
+            // Estilo específico do checkbox
+            input[type="checkbox"] {
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                accent-color: var(--ButtonBg);
+                
+                &:hover {
+                    transform: scale(1.1);
+                    transition: 150ms;
+                }
+            }
+        }
+
+        // Botão de submit
+        .submitButton {
+            background-color: var(--ButtonBg);
+            color: var(--TextButton);
+            border: 1px solid var(--ButtonBorder);
+            border-radius: 25px;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 15px;
+            align-self: center;
+            min-width: 200px;
+            transition: all 200ms ease;
+            box-shadow: var(--CardBgShadow);
+
+            &:hover {
+                box-shadow: var(--CardBgShadowHover);
+                transform: translateY(-3px);
+            }
+
+            &:active {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    // Footer
+    footer {
+        margin-top: auto;
+        width: 100%;
+        position: relative;
+        top: 40px;
+    }
+}
+
+// ============================================
+// MEDIA QUERIES - ORGANIZADAS NO FINAL
+// ============================================
+
+@media screen and (max-width: 1024px) {
+    .insertVersiculoUser {
+        .versiculoInfo {
+            width: 70%;
+            max-width: 450px;
+        }
+        
+        .nameUser {
+            margin: 40px 0 15px 40px;
+            font-size: 1.5rem;
+        }
+        
+        .desc {
+            font-size: 1.3rem;
+            width: 85%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .insertVersiculoUser {
+        .versiculoInfo {
+            width: 85%;
+            padding: 30px;
+            gap: 22px;
+        }
+        
+        .nameUser {
+            margin: 35px 0 15px 35px;
+            font-size: 1.4rem;
+            max-width: 250px;
+        }
+        
+        .desc {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            width: 90%;
+        }
+        
+        .input1,
+        .input2,
+        .input3 {
+            .descricaoVers,
+            .versiculo {
+                font-size: 1.05rem;
+            }
+        }
+        
+        .submitButton {
+            padding: 11px 28px;
+            font-size: 1.05rem;
+            min-width: 190px;
+        }
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .insertVersiculoUser {
+        .versiculoInfo {
+            width: 90%;
+            padding: 25px;
+            border-radius: 20px;
+            gap: 18px;
+            margin-bottom: 40px;
+        }
+        
+        .nameUser {
+            margin: 25px 0 10px 25px;
+            font-size: 1.3rem;
+            max-width: 200px;
+        }
+        
+        .desc {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            width: 95%;
+        }
+        
+        .input1,
+        .input2,
+        .input3 {
+            gap: 8px;
+            
+            .descricaoVers,
+            .versiculo,
+            .favorito {
+                font-size: 1rem;
+            }
+            
+            .favorito {
+                font-size: 0.95rem;
+                gap: 12px;
+            }
+        }
+        
+        .sentimento,
+        input[type="text"] {
+            font-size: 0.95rem;
+            padding: 9px 13px;
+        }
+        
+        .submitButton {
+            padding: 10px 25px;
+            font-size: 1rem;
+            min-width: 180px;
+            margin-top: 10px;
+        }
+        
+        footer {
+            top: 30px;
+        }
+    }
+}

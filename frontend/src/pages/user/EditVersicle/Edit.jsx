@@ -12,6 +12,7 @@ export default function Edit(){
              <p className="desc">Aqui você poderá editar seus versiculos!</p>
 
              <section className="dadosUser">
+                <h2 className="sentimentoPae">Sentimento:</h2>
                 <select className="Sentimento">
                     <option value="">Selecione um sentimento</option>
                         <option value="Triste">Triste</option>

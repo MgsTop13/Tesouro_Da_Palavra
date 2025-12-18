@@ -1,8 +1,7 @@
 .Main-Home {
     --BgColor: #063638;
     --TextColor: #E2D6D6;
-    --TextButton: #FFFFFF;
-    --ButtonBg: #F3701E;
+    --TextButton: #FMain-Home01E;
     --CardBg: #4B607F;
     --ButtonBorder: #000000;
     --CardBgShadow: -4px 5px 4px #00000070;
@@ -53,22 +52,83 @@
                 color: var(--TextButton);
             }
         }
-
     }
-        .title {
-            color: var(--TextColor);
-            text-align: center;
-        }
-    
+
+    .title {
+        color: var(--TextColor);
+        text-align: center;
+    }
 }
 
-@media (max-width: 426px) {
+// ============================================
+// MEDIA QUERIES - ORGANIZADAS NO FINAL
+// ============================================
+
+@media screen and (max-width: 768px) {
     .Main-Home {
+        .versicleDaily {
+            max-width: 400px;
+            margin: 35px auto;
+            
+            .info {
+                transform: translate(80%, 120%);
+                max-width: 140px;
+                font-size: 0.95rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .Main-Home {
+        display: grid;
+        place-items: center;
+        
         .versicleDaily {
             margin: 25px;
             width: 90%;
+            max-width: 350px;
+            
+            .info {
+                transform: translate(50%, 120%);
+                max-width: 130px;
+                font-size: 0.9rem;
+                height: 32px;
+            }
         }
+    }
+}
 
-        display: grid;
+@media screen and (max-width: 376px) {
+    .Main-Home {
+        .versicleDaily {
+            margin: 20px;
+            width: 92%;
+            padding: 20px;
+            
+            .info {
+                transform: translate(40%, 120%);
+                max-width: 120px;
+                font-size: 0.85rem;
+                height: 30px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .Main-Home {
+        .versicleDaily {
+            margin: 15px;
+            width: 95%;
+            padding: 18px;
+            
+            .info {
+                transform: translate(30%, 120%);
+                max-width: 110px;
+                font-size: 0.8rem;
+                height: 28px;
+            }
+        }
     }
 }
