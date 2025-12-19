@@ -1,4 +1,9 @@
 .Main-Home {
+
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
     --BgColor: #063638;
     --TextColor: #E2D6D6;
     --TextButton: #FMain-Home01E;
@@ -8,17 +13,17 @@
     --CardBgShadowHover: -9px 9px 4px #000000a1;
 
     background-color: var(--BgColor);
-    min-height: 110vh;
+    min-height: 100vh;
     color: var(--TextColor);
 
     .versicleDaily {
-        width: 100%;
-        max-width: 458px;
-        margin: 45px;
+        width: 50%;
+        max-width: 35vh;
+        margin: 20px;
         background-color: var(--CardBg);
         color: var(--TextColor);
         border-radius: 25px;
-        padding: 25px;
+        padding: 40px;
         box-shadow: var(--CardBgShadow);
         transition: 350ms;
         flex-wrap: wrap;

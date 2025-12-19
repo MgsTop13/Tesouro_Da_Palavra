@@ -5,6 +5,7 @@ import {Link} from "react-router"
 import "../../scss/global.scss"
 import "./home.scss"
 
+
 export default function Home(){
     return(
         <main className="Main-Home">

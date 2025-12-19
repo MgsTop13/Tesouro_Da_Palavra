@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router"
 import Footer from "../../components/footer/footer.jsx"
 import Cabecalho2 from "../../components/headerPages"
 
+
 export default function Cadastro() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
