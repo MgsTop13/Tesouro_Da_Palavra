@@ -1,35 +1,39 @@
-.cards{
+.cards {
+    --buttonBorder: #3e3e3e;
     height: 30vh;
     display: flex;
-
     margin: 10px;
     justify-content: center;
     gap: 10%;
 
-    .card{
+    .card {
         border-radius: 20px;
         width: 350px;
         padding: 20px;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 20px;
-        
 
-        button{
-            background-color: rgba(243, 112, 30, 1);
-            width: 60%;
-            height: 20%;
+        .info {
+            .webPage {
+                background-color: rgba(243, 112, 30, 1);
+                color: #ffffff;
+                height: 23px;
+                width: 130px;
+                border-radius: 12px;
+                border: none;
+                border: 2px solid var(--buttonBorder);
 
-            border-radius: 12px;
-            a{
-                text-decoration: none;
-                color: beige;
+                //Me explica esse a pfvr kkkkk
+                a {
+                    text-decoration: none;
+                    color: beige;
+                }
             }
         }
-        
+
     }
 
 }

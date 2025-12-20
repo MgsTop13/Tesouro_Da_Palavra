@@ -1,0 +1,23 @@
+.favoritos{
+    --BgColor: #063638;
+    --TextColor: #E2D6D6;
+    --TextButton: #FMain-Home01E;
+    --CardBg: #4B607F;
+    --ButtonBorder: #000000;
+    --CardBgShadow: -4px 5px 4px #00000070;
+    --CardBgShadowHover: -9px 9px 4px #000000a1;
+
+    background-color: var(--BgColor);
+    min-height: 110vh;
+    
+    .title1, .title2{
+        text-align: center;
+        color: var(--TextColor);
+        margin-top: 25px;
+    }
+
+    footer{
+        position: relative;
+        top: 320px;
+    }
+}

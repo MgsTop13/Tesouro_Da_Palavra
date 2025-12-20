@@ -1,4 +1,4 @@
-.EditarVersiculosUser {
+.EditarJejumUser {
     --BgColor: #063638;
     --TextColor: #E2D6D6;
     --TextButton: #FFFFFF;
@@ -49,12 +49,7 @@
             box-shadow: var(--CardBgShadowHover);
             transform: translateY(-2px)
         }
-
-        .Sentimento {
-            border-radius: 7px;
-            width: 50%;
-        }
-
+        .input0,
         .input1,
         .input2,
         .input3 {
@@ -68,30 +63,6 @@
                 border: 1px solid var(--BorderInput);
             }
         }
-
-        .input3 {
-            .favorito {
-                width: 80%;
-                font-size: 0.9rem;
-            }
-            display: flex;
-            width: 50%;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-
-            input[type="checkbox"] {
-                width: 20px;
-                height: 20px;
-                cursor: pointer;
-                accent-color: var(--ButtonBg);
-                
-                &:hover {
-                    transform: scale(1.1);
-                    transition: 150ms;
-                }
-            }
-        }
     }
 
     footer {
@@ -100,9 +71,8 @@
     }
 }
 
-
 @media screen and (max-width: 1024px) {
-    .EditarVersiculosUser {
+    .EditarJejumUser {
         .dadosUser {
             left: 30%;
             width: 40%;
@@ -111,7 +81,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .EditarVersiculosUser {
+    .EditarJejumUser {
         .nameuser {
             margin: 40px;
             font-size: 1.5rem;
@@ -129,7 +99,7 @@
 }
 
 @media screen and (max-width: 426px) {
-    .EditarVersiculosUser {
+    .EditarJejumUser {
         .nameuser {
             margin: 30px;
             font-size: 1.4rem;
@@ -145,24 +115,12 @@
             width: 70%;
             top: 15px;
             
-            .Sentimento {
-                width: 70%;
-            }
-            
             .input1,
             .input2,
             .input3 {
                 input {
                     width: 200px;
                     height: 25px;
-                }
-            }
-            
-            .input3 {
-                width: 70%;
-                
-                .favorito {
-                    font-size: 0.85rem;
                 }
             }
         }

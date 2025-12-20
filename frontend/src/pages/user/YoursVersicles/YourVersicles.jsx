@@ -12,8 +12,8 @@ export default function YourVersicles(){
 
             <section className="CarregarVersiculos">
                 <div className="infoText">
-                    <h1 className="tituloSite">Versiculos Global</h1>
-                    <p className="descricaoSite">Aqui você acha versiculos publicados para todo o público visualizar e favoritar</p>
+                    <h1 className="tituloSite">Versiculos do Usuario</h1>
+                    <p className="descricaoSite">Aqui você acha versiculos que você salvou em sua conta!</p>
                 </div>
 
                     <h4 className="tituloSentimento">Insira seu sentimento</h4>

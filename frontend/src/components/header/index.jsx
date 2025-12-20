@@ -49,7 +49,7 @@ export default function Cabecalho() {
                     <div className="itens">
 
                         <div className="item1">
-                            <Link className='link'>Seus jejuns</Link> {/*Pagina de jejuns*/}
+                            <Link className='link' to={'/Jejuns'}>Seus jejuns</Link> {/*Pagina de jejuns*/}
                         </div>
 
                         <div className="item2">
@@ -59,7 +59,7 @@ export default function Cabecalho() {
 
                         <div className="item3">
                             <Link className='link'>Configurações da conta</Link> {/*Pagina de configurações da conta */}
-                            <Link className='link'>Favoritos</Link> {/*Pagina de versiculos favoritos*/}
+                            <Link className='link' to={'/Favoritos'}>Favoritos</Link> {/*Pagina de versiculos favoritos*/}
                         </div>
                     </div>
                 </nav>
