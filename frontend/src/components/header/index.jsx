@@ -1,7 +1,7 @@
 import './index.scss'
-import Menu from "/imgs/menu.png"
+import Menu from "/icons/Menu.png"
 import { Link } from "react-router"
-import Account from "/imgs/user.png"
+import Account from "/icons/iconUser.png"
 import { useState, useEffect, useEffectEvent } from "react"
 
 export default function Cabecalho() {
@@ -54,11 +54,11 @@ export default function Cabecalho() {
 
                         <div className="item2">
                             <Link className='link' to={'/Login'}>Login</Link> {/*Isso deve ser do login*/}
-                            <Link className='link'>Sobre o site</Link> {/*Pagina de sobre*/}
+                            <Link className='link' to={'/About'}>Sobre o site</Link> {/*Pagina de sobre*/}
                         </div>
 
                         <div className="item3">
-                            <Link className='link'>Configurações da conta</Link> {/*Pagina de configurações da conta */}
+                            <Link className='link' to={'/Account'}>Configurações da conta</Link> {/*Pagina de configurações da conta */}
                             <Link className='link' to={'/Favoritos'}>Favoritos</Link> {/*Pagina de versiculos favoritos*/}
                         </div>
                     </div>

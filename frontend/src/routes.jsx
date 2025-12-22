@@ -2,11 +2,13 @@ import {BrowserRouter, Routes, Route} from "react-router"
 
 //SITE
     import Home from "./pages/home/home"
+    import About from "./pages/about/about"
     import Login from "./pages/login/login"
     import Cadastro from "./pages/cadastro/cadastro"
     import VersiclesGlobal from "./pages/VersiculosGlobal/VersiclesGlobal"
 
 //Usuario
+    import Account from "./pages/account/account"
     //Versiculos
         import Edit from "./pages/user/EditVersicle/Edit"
         import Insert from "./pages/user/InsertVersicle/Insert"
@@ -33,7 +35,9 @@ export default function NavegationRouter(){
             <Routes>
                 {/*Site */}
                     <Route path="/" element={<Home />} />
+                    <Route path="/About" element={<About />} />
                     <Route path="/Login" element={<Login />} />
+                    <Route path="/Account" element={<Account />} />
                     <Route path="/Register" element={<Cadastro />} />
                     <Route path="/VersiclesGlobal" element={<VersiclesGlobal />} />
                     
@@ -44,6 +48,7 @@ export default function NavegationRouter(){
                         <Route path="/Insert" element={<Insert />} />
                         <Route path="/YourVersicles" element={<YourVersicles />} />
                         <Route path="/Favoritos" element={<PaginaDeVersiculosFavoritos />} />
+                    
                     {/*Jejuns */}
                         <Route path="/Jejuns" element={<JejumHome />} />
                         <Route path="/EditarJejum" element={<EditJejum />} />

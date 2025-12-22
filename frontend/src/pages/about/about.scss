@@ -1,0 +1,93 @@
+.aboutPage{
+    --BgColor: #063638;
+    --TextColor: #E2D6D6;
+    --TextButton: #FFFFFF;
+    --ButtonBg: #F3701E;
+    --CardBg: #4B607F;
+    --ButtonBorder: #000000;
+    --CardBgShadow: -4px 5px 4px #00000070;
+    --CardBgShadowHover: -9px 9px 4px #000000a1;
+    background-color: var(--BgColor);
+    min-height: 100vh;
+    color: var(--TextColor);
+    
+    .title{
+        margin-top: 5%;
+        text-align: center;
+    }
+
+    .icones{
+        top: 20px;
+        width: 80%;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        background-color: red;
+        h1{
+            font-size: 1.7rem;
+            text-align: center;
+        }
+
+        .desc{
+            margin: 10px;
+            text-align: start;
+            background-color: blue;
+            width: 70%;
+            margin-left: 15%;
+        }
+    }   
+
+    .imgs{
+        .titleImg{
+            text-align: center;
+        }
+
+        .img1{
+            img{
+
+            }
+            
+            h2{
+
+            }
+            
+            a{
+
+            }
+        }
+    }
+
+    .desenvolvedores{
+        .ADM{
+            img{
+
+            }
+
+            .info{
+                h2{
+
+                }
+
+                h3{
+
+                }
+            }
+
+            .info2{
+                h1{
+
+                }
+
+                .info{
+                    h2{
+
+                    }
+
+                    a{
+
+                    }
+                }
+            }
+        }
+    }
+}

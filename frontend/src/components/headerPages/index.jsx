@@ -1,6 +1,6 @@
 import './index.scss'
 import { Link } from "react-router"
-import Account from "/imgs/user.png"
+import Account from "/icons/iconUser.png"
 import { useState, useEffect, useEffectEvent } from "react"
 
 export default function Cabecalho2() {
