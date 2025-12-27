@@ -1,14 +1,21 @@
 import Cabecalho2 from "../../components/headerPages"
 import Footer from "../../components/footer/footer"
-import { useState } from "react"
+import { useNavigate } from "react-router"
+import { useEffect, useState } from "react"
+import api from "../../axios.js"
 import "../../scss/global.scss"
 import "./account.scss"
 export default function Account() {
+    const navigate = useNavigate();
     const [edit, setEdit] = useState(false);
-    const [name, setName] = useState('Mgs');
-    const [date1, setDate1] = useState('2009-10-16');
-    const [email, setEmail] = useState('mgs350084@gmail.com');
-    const [palavraRecuperacao, setPalavraRecuperacao] = useState('Potato10!');
+    const [name, setName] = useState('');
+    const [date1, setDate1] = useState('');
+    const [email, setEmail] = useState('');
+    const [palavraRecuperacao, setPalavraRecuperacao] = useState('');
+
+    useEffect(() => {
+        dadosUser()
+    })
 
     const descobrirIdade = () => {
         const hoje = new Date();
@@ -23,6 +30,35 @@ export default function Account() {
             idade--;
         }
         return idade;
+    }
+    async function dadosUser() {
+        const token = localStorage.getItem('token')
+        try{
+            const response = await api.post('/VerifyToken', {
+                token: token
+            })
+
+            const userDados = response.data.decoded            
+            const formatarData = (dataISO) => {
+                const data = new Date(dataISO);
+                const ano = data.getFullYear();
+                const mes = (data.getUTCMonth () +1).toString().padStart(2, '0');
+                const dia = data.getUTCDate().toString().padStart(2, '0')
+                return `${ano}-${mes}-${dia}`;
+            }
+
+            setName(userDados.name)
+            setEmail(userDados.email)
+            setDate1(formatarData(userDados.nasc))
+            setPalavraRecuperacao(userDados.pass)
+            
+        } catch(error){
+            console.error(error.message)
+            if(error.message === "Request failed with status code 403"){
+                alert('Erro na verificação, faça login novamente ou contate o suporte!')
+                navigate('/Login')
+            }
+        }
     }
 
     return (
@@ -74,6 +110,7 @@ export default function Account() {
                 <button onClick={() => setEdit(!edit)}>
                     {edit ? 'salvar' : 'editar'}
                 </button>
+                
             <Footer />
         </main>
     )

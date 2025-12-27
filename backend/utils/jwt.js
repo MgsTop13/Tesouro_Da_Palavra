@@ -3,9 +3,11 @@ const KEY = 'WebSiteCristãoFeitoPorMgs/Amanda'
 
 export function generateToken(usuario) {
   const userInfo = {
-    name: usuario.name || '',
+    name: usuario.name,
     email: usuario.email,
-    role: usuario.role || 'user',
+    nasc: usuario.dataNasc,
+    pass: usuario.palavraRecuperacao,
+    role: usuario.id_user,
     date: new Date()
   };
   return jwt.sign(userInfo, KEY, { expiresIn: '40m' });

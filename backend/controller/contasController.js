@@ -51,11 +51,11 @@ endpoints.post('/Login', async (req, res) => {
     }
 })
 
-endpoints.get('/VerifyToken', (req,res) => {
+endpoints.post('/VerifyToken', (req,res) => {
     const {token} = req.body;
     try{
         const decoded = verifyToken(token);
-        if(decoded.message === 'invalid token'){
+        if(decoded.message === 'invalid token' || decoded.name === 'JsonWebTokenError'){
             return res.status(403).send('Acesso negado/invalido!')
         }
         res.send({

@@ -2,7 +2,7 @@ import { connection } from "../connections.js";
 
 export async function Login(dados){
     const DadosUser = `
-        SELECT name, email, password FROM cadastro
+        SELECT id_user, name, email, password, dataNasc, palavraRecuperacao FROM cadastro
             WHERE name = ? AND email = ? AND password = MD5(?)
     `
 
