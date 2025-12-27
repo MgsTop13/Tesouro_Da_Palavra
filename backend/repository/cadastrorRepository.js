@@ -2,7 +2,6 @@ import { connection } from "../connections.js";
 
 
 export async function CadastroUser(dados){
-    console.log(dados)
     const command = `
         INSERT INTO cadastro (name, email, password, dataNasc, admin, palavraRecuperacao)
             VALUES(?,?,MD5(?),?,?,?);

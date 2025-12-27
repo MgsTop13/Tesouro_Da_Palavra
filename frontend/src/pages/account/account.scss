@@ -1,0 +1,74 @@
+.accountPage{
+    --BgColor: #063638;
+    --TextColor: #E2D6D6;
+    --TextButton: #FFFFFF;
+    --ButtonBg: #F3701E;
+    --CardBg: #1f4436;
+    --ButtonBorder: #000000;
+    --CardBgShadow: -4px 5px 4px #00000070;
+    --CardBgShadowHover: -9px 9px 4px #000000a1;
+    --inputBg: #e8d8c9a4;
+    background-color: var(--BgColor);
+    min-height: 100vh;
+    color: var(--TextColor);
+
+    .conta{
+        margin-top: 25px;
+        text-align: center;
+    }
+
+    .dadosUsuario{
+        background-color: var(--CardBg);
+        border: 1px solid var(--ButtonBorder);
+        box-shadow: var(--CardBgShadow);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 90%;
+        height: 400px;
+        margin-top: 20px;
+        margin-left: 50px;
+        border-radius: 5px;
+        .name, .email, .dataNasc,.palavra{
+            gap: 5px;
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            min-height: 60px;
+           .title{
+            text-align: start;
+           }
+           
+           input{
+                background-color: var(--inputBg);
+                border: 1px solid var(--ButtonBorder);
+                height: 30px;
+                width: 80%;
+                margin-left: 100px;
+                border-radius: 25px;
+                padding-left: 10px;
+                padding-right: 20px;
+           }     
+        }
+    }
+
+    button{
+        background-color: var(--ButtonBg);
+        border: 1px solid var(--ButtonBorder);
+        height: 27px;
+        width: 127px;
+        color: var(--TextButton);
+        position: absolute;
+        left: 50%;  
+        top: 81.2%;
+        border-radius: 7px;
+        transform: translate(-50%);
+    }
+
+    footer{
+    position: relative;
+    margin-top: 30px;
+    }
+}

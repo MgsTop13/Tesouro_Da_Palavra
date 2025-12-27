@@ -28,9 +28,9 @@ export default function Account() {
     return (
         <main className="accountPage">
             <Cabecalho2 />
-            <seciton className="dadosUsuario">
+            <h1 className="conta">Dados do usuário</h1>
+            <section className="dadosUsuario">
                 <div className="name">
-
                     <h2 className="title">Nome:</h2>
                     <input
                         type="text"
@@ -70,10 +70,10 @@ export default function Account() {
                     />
                 </div>
 
+            </section>
                 <button onClick={() => setEdit(!edit)}>
                     {edit ? 'salvar' : 'editar'}
                 </button>
-            </seciton>
             <Footer />
         </main>
     )

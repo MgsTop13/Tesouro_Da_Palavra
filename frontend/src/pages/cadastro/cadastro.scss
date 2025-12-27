@@ -20,26 +20,25 @@
         text-align: center;
         transition: 450ms;
 
-        //animação ao entrar no site:
-            opacity: 0; //definir as variaveis
-            transform: translateY($animation-distance);
-            animation: slideUp $animation-duration ease-out forwards;
+        opacity: 0;
+        transform: translateY($animation-distance);
+        animation: slideUp $animation-duration ease-out forwards;
 
-            @keyframes slideUp{
-                0%{
-                    opacity: 0;
-                    transform: translateY($animation-distance);
-                }
-                
-                50%{
-                    opacity: 0.50;
-                }
-
-                100%{
-                    opacity: 1;
-                    transform: translateY(0);
-                }
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY($animation-distance);
             }
+            
+            50% {
+                opacity: 0.50;
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     }
 
     .dados {
@@ -91,7 +90,7 @@
         }
     }
 
-    .cadastrar{
+    .cadastrar {
         background-color: var(--ButtonBg);
         color: var(--TextButton);
         border: 1px solid var(--ButtonBorder);
@@ -101,16 +100,155 @@
         width: 120px;
         position: absolute;
         top: 70%;
+        left: 50%;
+        transform: translateX(-50%);
         border-radius: 15px;
         transition: 450ms;
-        &:hover{
-            transform: translateY(-6px);
-        }
+        cursor: pointer;
 
+        &:hover {
+            transform: translateX(-50%) translateY(-6px);
+            box-shadow: var(--CardBgShadowHover);
+        }
     }
 
     footer {
         position: relative;
-        margin-top: 13.5%;
+        margin-top: 23%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cadastro {
+        .title {
+            margin-top: 40px;
+            font-size: 1.8rem;
+            padding: 0 20px;
+        }
+
+        .dados {
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            padding: 0 20px;
+
+            .coluna1,
+            .coluna2 {
+                max-width: 550px;
+                width: 100%;
+                gap: 20px;                
+                
+                .input {
+                    min-height: 60px;
+                    height: 100%;
+                    
+                    input {
+                        min-height: 25px;
+                        height: 100%;
+                    }
+                }
+            }
+
+            .coluna2 {
+                margin-top: 0;
+            }
+        }
+
+        .cadastrar {
+            position: relative;
+            top: auto;
+            left: auto;
+            transform: none;
+            margin: 40px auto 30px;
+            display: block;
+
+            &:hover {
+                transform: translateY(-6px);
+            }
+        }
+
+        footer {
+            margin-top: 5%;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cadastro {
+        .title {
+            margin-top: 30px;
+            font-size: 1.6rem;
+            padding: 0 15px;
+        }
+
+        .dados {
+            gap: 25px;
+            padding: 0 15px;
+
+            .coluna1,
+            .coluna2 {
+                max-width: 100%;
+                gap: 20px;
+                
+                .input {
+                    input {
+                        padding-left: 20px;
+                        padding-right: 20px;
+                        font-size: 0.95rem;
+                    }
+                }
+            }
+        }
+
+        .cadastrar {
+            height: 44px;
+            width: 110px;
+            font-size: 0.95rem;
+            margin: 35px auto 25px;
+        }
+
+        footer {
+            margin-top: 15%;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .cadastro {
+        .title {
+            margin-top: 25px;
+            font-size: 1.4rem;
+            padding: 0 10px;
+        }
+
+        .dados {
+            gap: 20px;
+            padding: 0 10px;
+
+            .coluna1,
+            .coluna2 {
+                gap: 15px;
+                
+                .input {
+                    input {
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        font-size: 0.9rem;
+                        height: 35px;
+                    }
+                }
+            }
+        }
+
+        .cadastrar {
+            height: 40px;
+            width: 100px;
+            font-size: 0.9rem;
+            margin: 30px auto 20px;
+        }
+
+        footer {
+            margin-top: 10%;
+        }
     }
 }

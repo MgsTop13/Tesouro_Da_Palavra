@@ -1,8 +1,10 @@
 import Cabecalho2 from "../../../components/headerPages"
 import Footer from "../../../components/footer/footer"
 import {Link} from "react-router"
+import { useState } from "react"
 import "./Insert.scss"
 export default function Insert(){
+    const [sentimento, setSentimento] = useState('')
     return(
         <main className="insertVersiculoUser">
             <Cabecalho2 />

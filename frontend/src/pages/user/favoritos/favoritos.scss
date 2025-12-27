@@ -1,23 +1,65 @@
-.favoritos{
+.favoritos {
     --BgColor: #063638;
     --TextColor: #E2D6D6;
-    --TextButton: #FMain-Home01E;
+    --TextButton: #F3701E;
     --CardBg: #4B607F;
     --ButtonBorder: #000000;
     --CardBgShadow: -4px 5px 4px #00000070;
     --CardBgShadowHover: -9px 9px 4px #000000a1;
 
     background-color: var(--BgColor);
-    min-height: 110vh;
-    
-    .title1, .title2{
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    .title1, .title2 {
         text-align: center;
         color: var(--TextColor);
-        margin-top: 25px;
+        margin: 25px 20px 15px;
+        font-size: 1.8rem;
+        max-width: 100%;
+        word-break: break-word;
     }
 
-    footer{
-        position: relative;
-        top: 320px;
+    footer {
+        margin-top: 380px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .favoritos {
+        .title1, .title2 {
+            margin: 20px 15px 12px;
+            font-size: 1.6rem;
+        }
+        
+        footer {
+            margin-top: 400px;
+        }
+    }
+}
+
+@media screen and (max-width: 448px) {
+    .favoritos {
+        .title1, .title2 {
+            margin: 18px 12px 10px;
+            font-size: 1.4rem;
+        }
+        
+        footer {
+            margin-top: 400px;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .favoritos {
+        .title1, .title2 {
+            margin: 15px 10px 8px;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            margin-top: 400px;
+        }
     }
 }

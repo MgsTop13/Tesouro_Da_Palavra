@@ -1,20 +1,22 @@
 import jwt from 'jsonwebtoken'
+const KEY = 'WebSiteCristãoFeitoPorMgs/Amanda'
 
-const KEY = 'WebSiteCristãoFeitoPorMgs'
-
-export function generateToken(userInfo) {
-  if (!userInfo.role)
-    userInfo.role = 'user';
-
-  return jwt.sign(userInfo, KEY, { expiresIn: '140h' });
+export function generateToken(usuario) {
+  const userInfo = {
+    name: usuario.name || '',
+    email: usuario.email,
+    role: usuario.role || 'user',
+    date: new Date()
+  };
+  return jwt.sign(userInfo, KEY, { expiresIn: '40m' });
 }
-
 
 export function verifyToken(token) {
   try {
-    return jwt.verify(token, KEY); 
-  } catch {
-    return null;
+    const decoded = jwt.verify(token, KEY);
+    return decoded;
+  } catch(error) {
+    return error;
   }
 }
 
@@ -31,19 +33,19 @@ export function getTokenInfo(req) {
   }
 }
 
-export function getAuthentication(checkRole, throw401 = true) {  
+export function getAuthentication(checkRole, throw401 = true) {
   return (req, resp, next) => {
     try {
       let token = req.headers['x-access-token'];
       if (token === undefined)
         token = req.query['x-access-token'];
-    
+
       const signd = jwt.verify(token, KEY);
       req.user = signd;
-      
+
       if (checkRole && !checkRole(signd) && signd.role !== 'admin')
         return resp.status(403).end();
-    
+
       next();
     } catch {
       if (throw401) {
