@@ -38,3 +38,13 @@
     }
     
 }
+
+@media screen and (width < 768px){
+    .Header-Pages{
+        .nav-Header{
+            .itens{
+                left:80%
+            }
+        }
+    }
+}

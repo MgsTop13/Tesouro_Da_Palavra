@@ -1,6 +1,6 @@
 .Main-Home {
     display: grid;
-    grid-template-rows: auto 1fr auto;
+        grid-template-rows: auto 1fr auto;
     --BgColor: #063638;
     --TextColor: #E2D6D6;
     --TextButton: #FFFFFF;
@@ -13,18 +13,20 @@
     background-color: var(--BgColor);
     min-height: 100vh;
     color: var(--TextColor);
+    box-sizing: border-box;
 
     .versicleDaily {
-        width: 50%;
-        max-width: 55vh;
-        margin: 20px;
+        width: 90%;
+        max-width: 600px;
+        min-width: 280px;
+        margin: 20px auto;
         background-color: var(--CardBg);
         color: var(--TextColor);
         border-radius: 25px;
-        padding: 40px;
+        padding: 30px;
         box-shadow: var(--CardBgShadow);
         transition: 350ms;
-        flex-wrap: wrap;
+        
 
         &:hover {
             box-shadow: var(--CardBgShadowHover);
@@ -33,18 +35,22 @@
 
         .info {
             border: 0px;
-            max-width: 150px;
-            width: 100%;
+            width: 150px;
             height: 35px;
             font-size: 1rem;
             border-radius: 25px;
-            position: relative;
-            transform: translate(85%, 155%);
+            
+            right: 30px;
+            bottom: -17.5px;
             background-color: var(--ButtonBg);
             box-shadow: var(--CardBgShadow);
             color: var(--TextButton);
             border: 1px solid var(--ButtonBorder);
             transition: 200ms;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             &:hover {
                 box-shadow: var(--CardBgShadowHover);
@@ -53,6 +59,11 @@
             .Link {
                 text-decoration: none;
                 color: var(--TextButton);
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
         }
     }
@@ -60,6 +71,7 @@
     .title {
         color: var(--TextColor);
         text-align: center;
+        margin: 20px 0;
     }
 }
 
@@ -69,14 +81,34 @@
 
 @media screen and (max-width: 768px) {
     .Main-Home {
+        
         .versicleDaily {
-            max-width: 400px;
-            margin: 35px auto;
+            width: 85%;
+            max-width: 500px;
+            padding: 25px;
             
             .info {
-                transform: translate(80%, 120%);
-                max-width: 140px;
+                width: 140px;
+                height: 32px;
                 font-size: 0.95rem;
+                right: 25px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .Main-Home {
+        .versicleDaily {
+            width: 90%;
+            
+            
+            .info {
+                width: 130px;
+                height: 32px;
+                font-size: 0.9rem;
+                right: 20px;
+                bottom: -16px;
             }
         }
     }
@@ -84,19 +116,23 @@
 
 @media screen and (max-width: 426px) {
     .Main-Home {
-        display: grid;
-        place-items: center;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         
         .versicleDaily {
-            margin: 25px;
-            width: 90%;
+            margin: 15px auto;
+            width: 95%;
             max-width: 350px;
+            padding: 20px;
             
             .info {
-                transform: translate(50%, 120%);
-                max-width: 130px;
-                font-size: 0.9rem;
-                height: 32px;
+                width: 120px;
+                height: 30px;
+                font-size: 0.85rem;
+                right: 20px;
+                bottom: -15px;
             }
         }
     }
@@ -105,15 +141,16 @@
 @media screen and (max-width: 376px) {
     .Main-Home {
         .versicleDaily {
-            margin: 20px;
-            width: 92%;
-            padding: 20px;
+            width: 100%;
+            padding: 18px;
+            margin: 10px;
             
             .info {
-                transform: translate(40%, 120%);
-                max-width: 120px;
-                font-size: 0.85rem;
-                height: 30px;
+                width: 110px;
+                height: 28px;
+                font-size: 0.8rem;
+                right: 15px;
+                bottom: -14px;
             }
         }
     }
@@ -122,15 +159,16 @@
 @media screen and (max-width: 320px) {
     .Main-Home {
         .versicleDaily {
-            margin: 15px;
-            width: 95%;
-            padding: 18px;
+            padding: 15px;
+            border-radius: 20px;
             
-            .info {
-                transform: translate(30%, 120%);
-                max-width: 110px;
-                font-size: 0.8rem;
-                height: 28px;
+            .info{
+                width: 100px;
+                height: 26px;
+                font-size: 0.75rem;
+                right: 15px;
+                bottom: -13px;
+                border-radius: 20px;
             }
         }
     }

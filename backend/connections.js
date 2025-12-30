@@ -7,7 +7,7 @@ const connection = await mysql.createConnection({
     database: "Versiculos"
 })
 
-export { connection }
+export { connection };
 
 /*
 
