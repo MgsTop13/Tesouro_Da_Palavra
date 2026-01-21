@@ -1,13 +1,24 @@
-import { connection } from "../connections.js";
+import { supabase } from "../supabase.js";
 
-export async function ListarVersiculosUser(idUser) {
-    const Command = `
-       SELECT * FROM VersiculosUser
-        WHERE id_user = ?
-    `;
-    const [info] = await connection.query(Command, idUser)
-    return info;
-}
+    export async function ListarVersiculosUser(idUser) {
+        try{
+            const {data, error} = await supabase
+                .from('TesouroDaPalavra')
+                .select('*')
+                .eq('id_user', idUser)
+            
+            return{
+                sucess: true,
+                data: data
+            }
+        } catch(error){
+            return {
+                error: error.message,
+                data: []
+            }
+        }
+        
+    }
 
 export async function VerificarVersiculo(Versiculo){
     const command = `

@@ -1,3 +1,4 @@
+/*
 import mysql from "mysql2/promise";
 
 const connection = await mysql.createConnection({
@@ -8,6 +9,7 @@ const connection = await mysql.createConnection({
 })
 
 export { connection };
+*/
 
 /*
 

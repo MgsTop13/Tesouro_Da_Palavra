@@ -1,4 +1,5 @@
-import { connection } from "../connections.js";
+import { supabase } from "../supabase.js";
+
 
 export async function Login(dados){
     const DadosUser = `
