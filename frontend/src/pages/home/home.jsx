@@ -1,6 +1,5 @@
 import Footer from "../../components/footer/footer"
 import Cabecalho from "../../components/header"
-import Cards from "../../components/cards/card"     
 import {Link} from "react-router"
 import "../../scss/global.scss"
 import "./home.scss"
@@ -22,7 +21,6 @@ export default function Home(){
 
             <h1 className="title">Versículos - Global</h1>
 
-            <Cards />
 
             <Footer />
         </main>

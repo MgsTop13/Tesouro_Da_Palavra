@@ -3,13 +3,30 @@ import "./VersiclesGlobal.scss"
 import {Link} from "react-router"
 import Footer from "../../components/footer/footer"
 import Cabecalho2 from "../../components/headerPages"
+import api from "../../axios"
+import { useEffect, useState } from "react"
+
 
 export default function VersiclesGlobal(){
+    const [token, setToken] = useState(localStorage.getItem("token"))
+    const [name, setName] = useState("usuário")
+    async function tokenInfo(){
+        try {
+            const response = await api.post("/VerifyToken", {token})
+            console.log(response)
+            setName(response.data.decoded.name)
+        } catch (error) {
+            console.error(error.response)
+        }
+    }
+    useEffect(() => {
+        tokenInfo()
+    }, [token])
     return(
         <main className="main-Global">
             <Cabecalho2 />
 
-            <h1 className="nomeUser">Olá usuario!</h1>
+            <h1 className="nomeUser">Olá {name}!</h1>
 
             <section className="CarregarVersiculos">
                 <div className="infoText">

@@ -20,11 +20,12 @@
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "md5": "^2.3.0",
+    "minimatch": "^10.2.2",
     "mysql2": "^3.15.3",
-    "node-fetch": "^3.3.2",
-    "nodemon": "^3.1.10"
+    "node-fetch": "^3.3.2"
   },
   "devDependencies": {
-    "@types/md5": "^2.3.6"
+    "@types/md5": "^2.3.6",
+    "nodemon": "^3.1.11"
   }
 }

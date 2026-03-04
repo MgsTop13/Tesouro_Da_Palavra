@@ -1,7 +1,7 @@
-import { supabase } from "../supabase.js";
+import { connection } from "../connections.js";
 
     export async function ListarVersiculosUser(idUser) {
-        try{
+        /*try{
             const {data, error} = await supabase
                 .from('TesouroDaPalavra')
                 .select('*')
@@ -16,7 +16,12 @@ import { supabase } from "../supabase.js";
                 error: error.message,
                 data: []
             }
-        }
+        }*/
+       const command = `
+        select * from A
+       `
+       const [dados] = await connection.query(command, idUser);
+       return dados
         
     }
 

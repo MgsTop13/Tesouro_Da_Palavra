@@ -1,4 +1,5 @@
-import { supabase } from "../supabase.js";
+import { connection } from "../connections.js";
+
 
 export async function AdicionarADM(dados){
     const InserirADM = `

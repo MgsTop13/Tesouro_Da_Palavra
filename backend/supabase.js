@@ -1,3 +1,4 @@
+/*
 import { createClient } from '@supabase/supabase-js'
 import fetch from "node-fetch"
 import dotenv from "dotenv"
@@ -10,4 +11,5 @@ export const supabase = createClient(supabaseUrl, supabaseKey, {
         global: {
             fetch: fetch
         }
-    })
+})
+*/
