@@ -32,16 +32,18 @@
     }
 
     .dadosUser {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
         margin: 20px auto;
-        min-height: 250px;
+        min-height: 350px;
         width: 100%;
-        max-width: 500px;
+        max-width: 600px;
         
-        gap: 15px;
+        gap: 20px;
         text-align: center;
         color: var(--TextColor);
         background-color: var(--CardBg);
@@ -69,6 +71,10 @@
         .input1,
         .input2,
         .input3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
             width: 100%;
             max-width: 300px;
             
@@ -90,12 +96,9 @@
         }
 
         .input3 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: row;
             gap: 10px;
-            margin-top: 10px;
-
+            
             .favorito {
                 font-size: 1rem;
                 white-space: nowrap;

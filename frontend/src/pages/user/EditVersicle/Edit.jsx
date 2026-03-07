@@ -33,6 +33,8 @@ export default function Edit(){
                     <h3 className="favorito">E seu versiculo favorito?</h3>
                     <input type="checkbox" />
                 </div>
+
+                <button className="enviar">Editar</button>
              </section>
              <Footer />
         </main>

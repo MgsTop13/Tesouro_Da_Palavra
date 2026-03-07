@@ -65,9 +65,10 @@ export default function Account() {
         <main className="accountPage">
             <Cabecalho2 />
             <h1 className="conta">Dados do usuário</h1>
+            
             <section className="dadosUsuario">
                 <div className="name">
-                    <h2 className="title">Nome:</h2>
+                    <h2 className="title">Nome</h2>
                     <input
                         type="text"
                         value={name}
@@ -105,11 +106,13 @@ export default function Account() {
                         readOnly={!edit}
                     />
                 </div>
+                
+                <button className={`${edit ? "salvar": "editar"}`} onClick={() => setEdit(!edit)}>
+                    {edit ? 'Salvar' : 'Editar'}
+                </button>
+                
 
             </section>
-                <button onClick={() => setEdit(!edit)}>
-                    {edit ? 'salvar' : 'editar'}
-                </button>
                 
             <Footer />
         </main>

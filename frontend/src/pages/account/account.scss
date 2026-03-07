@@ -3,11 +3,15 @@
     --TextColor: #E2D6D6;
     --TextButton: #FFFFFF;
     --ButtonBg: #F3701E;
-    --CardBg: #1f4436;
+    --CardBg: #0c5457;
     --ButtonBorder: #000000;
     --CardBgShadow: -4px 5px 4px #00000070;
     --CardBgShadowHover: -9px 9px 4px #000000a1;
     --inputBg: #e8d8c9a4;
+    --SaveButton: #0c7e3b;
+    --EditButton: #1355ac;
+
+
     background-color: var(--BgColor);
     min-height: 100vh;
     color: var(--TextColor);
@@ -27,48 +31,55 @@
         align-items: center;
         gap: 20px;
         width: 90%;
-        height: 400px;
-        margin-top: 20px;
-        margin-left: 50px;
+        height: 430px;
+        position: relative;
+        top: 1.2rem;
+        left: 4.8rem;
         border-radius: 5px;
+        
         .name, .email, .dataNasc,.palavra{
             gap: 5px;
             display: flex;
             flex-direction: column;
             width: 90%;
             min-height: 60px;
-           .title{
-            text-align: start;
+           
+            .title{
+                text-align: start;
            }
            
            input{
                 background-color: var(--inputBg);
                 border: 1px solid var(--ButtonBorder);
-                height: 30px;
-                width: 80%;
+                height: 37px;
+                width: 83%;
                 margin-left: 100px;
                 border-radius: 25px;
                 padding-left: 10px;
                 padding-right: 20px;
            }     
         }
-    }
-
-    button{
-        background-color: var(--ButtonBg);
+        
+        .editar, .salvar{
+        background-color: var(--EditButton);
         border: 1px solid var(--ButtonBorder);
-        height: 27px;
-        width: 127px;
+        height: 37px;
+        width: 157px;
         color: var(--TextButton);
         position: absolute;
         left: 50%;  
-        top: 81.2%;
+        top: 95%;
         border-radius: 7px;
         transform: translate(-50%);
     }
 
+    .salvar{
+        background-color: var(--SaveButton);
+    }
+    }
+
     footer{
     position: relative;
-    margin-top: 30px;
+    margin-top: 80px;
     }
 }
