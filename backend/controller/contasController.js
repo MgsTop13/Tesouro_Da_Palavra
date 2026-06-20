@@ -1,17 +1,29 @@
 import * as Cadastro from "../repository/cadastrorRepository.js"
-import * as Login from "../repository/loginRepository.js"
 import { generateToken, verifyToken } from "../utils/jwt.js"
 import { Router } from "express"
-import md5 from "md5"
+import bcrypt from "bcryptjs"
+import iplim from "iplim"
+
+const limit = iplim({
+    timeout: 10 * 60 * 1000,     // 10 minutes block
+    limit: 10,             // 10 attempts
+    window: 10 * 60 * 1000, // per 10 minutes
+    statusCode: 429,
+    message: `Muitas tentativas. Tente novamente depois`,
+    verbose: true
+});
+
+
 
 const endpoints = Router();
 
-endpoints.post('/Cadastro', async (req, res) => {
+endpoints.post('/Cadastro', limit, async (req, res) => {
     const dados = req.body;
     try {
         const emailsExistentes = await Cadastro.emailIgual(dados.email);
         const nomesExistentes = await Cadastro.NomeIgual(dados.name);
         const NomesBanco = nomesExistentes?.name ?? 'naotem';
+
         if (nomesExistentes === undefined && emailsExistentes === undefined) {
             const IdUser = await Cadastro.CadastroUser(dados);
             res.send({ NewID: IdUser });
@@ -28,22 +40,25 @@ endpoints.post('/Cadastro', async (req, res) => {
 
 })
 
-endpoints.post('/Login', async (req, res) => {
+endpoints.post('/Login', limit, async (req, res) => {
     const dados = req.body;
+    
     try {
-        const LoginVerificar = await Login.Login(dados);
-        if (!LoginVerificar || LoginVerificar === undefined || LoginVerificar.length === 0 || LoginVerificar === null) {
-            return res.status(401).send("Usuário inexistente");
-        }
+        const LoginVerificar = await Cadastro.Login(dados)
+        if (LoginVerificar.length === 0 ) return res.status(401).send("Usuário inexistente");
 
         const usuario = LoginVerificar[0];
-        const senhaMD5 = md5(dados.password)
+        
+        if(dados.password === undefined){
+            return res.status(401).send("Insira sua senha!");
+        }
+        const isValid = await bcrypt.compare(dados.password, usuario.password)
 
-        if (usuario.email === dados.email && usuario.name === dados.name && usuario.password === senhaMD5) {
+        if ((usuario.email === dados.email || usuario.name === dados.name) && isValid) {
             let token = generateToken(usuario)
             res.send({ tokenGerado: token })
-        } else if (usuario.email !== dados.email || usuario.name !== dados.name || usuario.password !== senhaMD5) {
-            res.status(401).send("Algo ta errado ae akakka")
+        } else {
+            res.status(401).send("Campos inválidos")
         }
 
     } catch (error) {
@@ -58,19 +73,21 @@ endpoints.post('/VerifyToken', (req,res) => {
         if(decoded.message === 'invalid token' || decoded.name === 'JsonWebTokenError'){
             return res.status(403).send('Acesso negado/invalido!')
         }
+
         res.send({
             acesso: 'Autorizado!',
             decoded
         })
+
     } catch(error){
         res.send(error)
     }
 })
 
-endpoints.put('/RecuperarSenha/:idUser', async (req, res) => {
+endpoints.put('/RecuperarSenha/:idUser', limit, async (req, res) => {
     const { novaSenha, palavraRecuperacao } = req.body;
     const idUser = req.params.idUser;
-
+    
     try {
         //Pega os dados do usuario no banco atraves do id
         const palavraBanco = await Cadastro.DadosUser(idUser);

@@ -13,12 +13,14 @@ export default function Edit(){
 
              <section className="dadosUser">
                 <h2 className="sentimentoPae">Sentimento:</h2>
+                
                 <select className="Sentimento">
                     <option value="">Selecione um sentimento</option>
                         <option value="Triste">Triste</option>
                         <option value="Feliz">Feliz</option>
                         <option value="Alegre">Alegre</option>
                 </select>
+                
                 <div className="input1">
                     <h3 className="descricaoVers">Oque você entendeu do versiculo</h3>
                     <input type="text"placeholder="Amar ao próximo e amar a Cristo!" />

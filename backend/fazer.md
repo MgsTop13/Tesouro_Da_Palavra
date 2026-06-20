@@ -15,7 +15,9 @@
 
 5.Tabela de jejuns
     -Pegar o proposito do jejum, descricao dele, versiculos que te marcaram, e oque voce aprendeu nele
-    -Contera com o Id do usuario
+    -Conterá com o Id do usuario
+
+-CRUD dos versiculos
 
 
 FEITO:

@@ -9,8 +9,7 @@
     --CardBgShadowHover: -9px 9px 4px #000000a1;
     --inputBg: #e8d8c9a4;
     --BorderInput: #2e2e2e;
-    $animation-duration: 450ms;
-    $animation-distance: 30px;
+
 
     background-color: var(--BgColor);
     min-height: 100vh;
@@ -19,141 +18,140 @@
         color: var(--TextColor);
         text-align: center;
         margin-top: 50px;
-        opacity: 0;
-        transform: translateY($animation-distance);
-        animation: slideUp $animation-duration ease-out forwards;
-
-        @keyframes slideUp {
-            0% {
-                opacity: 0;
-                transform: translateY($animation-distance);
-            }
-            
-            50% {
-                opacity: 0.50;
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     }
 
     .dados-Login {
+        background-color: var(--CardBg);
         color: var(--TextColor);
+        box-shadow: var(--CardBgShadow);
+
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
+
         position: relative;
         left: 50%;
-        margin-top: 3%;
-        transform: translate(-50%);
-        background-color: var(--CardBg);
-        min-width: 420px;
-        width: 20%;
-        min-height: 420px;
+        transform: translate(-50%, 4%);
+        width: 420px;
+        height: 350px;
         border-radius: 10px;
-        box-shadow: var(--CardBgShadow);
-        transition: all 350ms ease;
-        padding: 30px 20px;
 
         &:hover {
-            transform: translate(-50%, -2%);
+            transform: translate(-50%, 2%);
             box-shadow: var(--CardBgShadowHover);
         }
 
-        .input {
+        .inputs {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height: 50%;
+
+            .input {
+                h2 {
+                    margin-left: 5%;
+                }
+
+                width: 80%;
+                height: 100%;
+
+                .showPass{
+                    position: fixed;
+                    right: 10%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+
+                input {
+                    position: absolute;
+                    margin-top: 5px;
+                    padding-left: 25px;
+                    max-height: 37px;
+                    border-radius: 25px;
+                    border: 1px solid var(--BorderInput);
+                    height: 100%;
+                    width: 85%;
+                    padding-right: 16px;
+                    background-color: var(--inputBg);
+                    color: #333;
+                    font-size: 1rem;
+                    transition: all 200ms ease;
+
+                    &::placeholder {
+                        color: #666;
+                        font-size: 0.95rem;
+                    }
+
+                    &:focus {
+                        outline: 2px solid var(--ButtonBg);
+                        box-shadow: 0 0 0 3px rgba(243, 112, 30, 0.2);
+                    }
+
+                    &:hover {
+                        box-shadow: var(--CardBgShadow);
+                    }
+                }
+            }
+        }
+
+        .opcoes {
+            display: flex;
+            flex-direction: column;
+            font-size: 0.8rem;
+            text-align: start;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
             max-width: 332px;
             width: 100%;
-            height: 70px;
-            
-            input {
-                margin-top: 5px;
-                padding-left: 25px;
-                max-height: 37px;
-                border-radius: 25px;
-                border: 1px solid var(--BorderInput);
-                height: 100%;
-                width: 100%;
-                padding-right: 16px;
-                background-color: var(--inputBg);
-                color: #333;
-                font-size: 1rem;
-                transition: all 200ms ease;
 
-                &::placeholder {
-                    color: #666;
-                    font-size: 0.95rem;
-                }
-
-                &:focus {
-                    outline: 2px solid var(--ButtonBg);
-                    box-shadow: 0 0 0 3px rgba(243, 112, 30, 0.2);
-                }
+            .link {
+                color: var(--TextColor);
+                text-decoration: none;
+                transition: color 200ms ease;
 
                 &:hover {
-                    box-shadow: var(--CardBgShadow);
+                    color: var(--ButtonBg);
+                    text-decoration: underline;
                 }
             }
         }
-    }
 
-    .opcoes {
-        display: flex;
-        flex-direction: column;
-        font-size: 0.8rem;
-        text-align: start;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 20px;
-        max-width: 332px;
-        width: 100%;
-
-        .link {
-            color: var(--TextColor);
-            text-decoration: none;
-            transition: color 200ms ease;
+        .logar {
+            background-color: var(--ButtonBg);
+            color: var(--TextButton);
+            border: 1px solid var(--ButtonBorder);
+            box-shadow: var(--CardBgShadow);
+            border: none;
+            height: 37px;
+            width: 170px;
+            position: absolute;
+            top: 96%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 15px;
+            transition: all 450ms ease;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
 
             &:hover {
-                color: var(--ButtonBg);
-                text-decoration: underline;
+                transform: translateX(-50%) translateY(-4px);
+                box-shadow: var(--CardBgShadowHover);
+            }
+
+            &:active {
+                transform: translateX(-50%) translateY(0);
             }
         }
     }
 
-    .logar {
-        background-color: var(--ButtonBg);
-        color: var(--TextButton);
-        border: 1px solid var(--ButtonBorder);
-        box-shadow: var(--CardBgShadow);
-        border: none;
-        height: 37px;
-        width: 170px;
-        position: absolute;
-        top: 96%;
-        left: 50%;
-        transform: translateX(-50%);
-        border-radius: 15px;
-        transition: all 450ms ease;
-        cursor: pointer;
-        font-size: 1rem;
-        font-weight: 600;
-
-        &:hover {
-            transform: translateX(-50%) translateY(-4px);
-            box-shadow: var(--CardBgShadowHover);
-        }
-
-        &:active {
-            transform: translateX(-50%) translateY(0);
-        }
-    }
 
     footer {
-        position: relative;
-        margin-top: 5%;
+        height: 100%;
+        margin-top: 10%;
     }
 }
 
@@ -175,7 +173,7 @@
             .input {
                 max-width: 300px;
                 height: 65px;
-                
+
                 input {
                     padding-left: 20px;
                     font-size: 0.95rem;
@@ -232,7 +230,7 @@
             .input {
                 max-width: 280px;
                 height: 60px;
-                
+
                 input {
                     padding-left: 18px;
                     padding-right: 18px;
@@ -280,7 +278,7 @@
             .input {
                 max-width: 260px;
                 height: 55px;
-                
+
                 input {
                     padding-left: 15px;
                     padding-right: 15px;

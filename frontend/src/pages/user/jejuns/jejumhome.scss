@@ -7,211 +7,160 @@
     --ButtonBorder: #000000;
     --CardBgShadow: -4px 5px 4px #00000070;
     --CardBgShadowHover: -9px 9px 4px #000000a1;
-    $animation-duration: 450ms;
-    $animation-distance: 30px;
 
     background-color: var(--BgColor);
     min-height: 110vh;
     color: var(--TextColor);
 
     .cardsPages {
-        margin-top: 70px;
-        margin-left: 11%;
-        width: 80%;
+        margin-top: 5%;
+        width: 100%;
+        height: 220px;
         display: grid;
+        align-items: center;
         grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
+        gap: 5%;
 
-        .page1, .page2, .page3 {
+        .page1,
+        .page2,
+        .page3 {
+            position: relative;
+            margin-left: 15%;
             width: 75%;
-            margin-left: 10%;
-            min-height: 160px;
+            height: 80%;
             text-align: center;
+            border: 1px solid var(--ButtonBorder);
             background-color: var(--CardBg);
             border-radius: 15px;
-            padding: 25px;
+            
             box-shadow: var(--CardBgShadow);
-            transition: all 350ms ease;
-            opacity: 0;
-            transform: translateY($animation-distance);
-            animation: slideUp $animation-duration ease-out forwards;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
 
 
-            &:hover{
+            &:hover {
                 box-shadow: var(--CardBgShadowHover);
                 transform: translateY(-15px);
             }
 
             .title {
+                width: 100%;
                 color: var(--TextColor);
                 font-size: 1.4rem;
-                margin-bottom: 10px;
                 font-weight: 600;
+                margin-top: 10%; 
             }
 
             .description {
                 width: 100%;
-                font-size: 16px;
-                text-align: center;
-                margin-top: 15px;
+                margin: 5%;
+                font-size: 1.2rem;
+                font-weight: 300;
+                text-align: start;
                 color: var(--TextColor);
-                line-height: 1.4;
-                flex-grow: 1;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                padding: 0 5px;
             }
 
             button {
-                width: 120px;
-                height: 35px;
-                border: none;
+                position: absolute;
+                bottom: -15%;
+                left: 50;
+                transform: translate(-50%, -48%);
+                margin-top: 15%;
+                width: 50%;
+                height: 20%;
                 background-color: var(--ButtonBg);
                 border: 1px solid var(--ButtonBorder);
-                border-radius: 25px;
+                border-radius: 7px;
                 cursor: pointer;
-                transition: all 200ms ease;
                 box-shadow: var(--CardBgShadow);
-                margin-left: 35px;
-                top:40px;
-                position: relative;
-                
-
-                &:hover {
-                    box-shadow: var(--CardBgShadowHover);
-                    transform: translateY(-2px);
-                }
+                font-weight: 400px;
+                font-size: 1.1rem;
+                color: var(--TextButton);
 
                 .link {
                     text-decoration: none;
-                    color: var(--TextButton);
-                    font-size: 0.95rem;
-                    display: block;
                     width: 100%;
                     height: 100%;
-                    line-height: 35px;
                     text-align: center;
                 }
             }
         }
     }
 
-    .jejunsSalvos{
-        margin-top: 50px;
-        
-        .title{
+    .jejunsSalvos {
+        width: 100%;
+        margin-top: 5%;
+
+        .title {
             text-align: center;
         }
     }
 
-    footer{
-        position: relative;
-        margin-top: 250px;
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 15%;
     }
 }
 
-@media screen and (max-width: 1024px) {
-    .jejumMain {
-        .cardsPages {
-            margin-left: 8%;
-            width: 84%;
-            gap: 30px;
-            
-            .page1, .page2, .page3 {
-                width: 80%;
-                margin-left: 8%;
-                min-height: 170px;
+@media screen and (max-width: 845px) {
+    .jejumMain{
+        .cardsPages{
+            height: 220px;
+            .page1, .page2, .page3{
+                height: 100%;
                 
-                .description {
-                    font-size: 15px;
-                }
-                
-                button {
-                    width: 110px;
-                    height: 32px;
-                    
-                    .link {
-                        line-height: 32px;
-                        font-size: 0.9rem;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .jejumMain {
-        .cardsPages {
-            grid-template-columns: repeat(2, 1fr);
-            margin-left: 5%;
-            width: 90%;
-            gap: 25px;
-            
-            .page1, .page2, .page3 {
-                width: 85%;
-                margin-left: 7.5%;
-                min-height: 160px;
-                padding: 20px;
-                
-                .title {
-                    font-size: 1.3rem;
-                }
-                
-                .description {
-                    font-size: 14.5px;
-                }
-                
-                button {
-                    width: 105px;
-                    height: 30px;
-                    
-                    .link {
-                        line-height: 30px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 420px) {
-    .jejumMain {
-        .cardsPages {
-            grid-template-columns: 1fr;
-            margin-left: 0;
-            width: 100%;
-            padding: 0 20px;
-            gap: 20px;
-            
-            .page1, .page2, .page3 {
-                width: 90%;
-                margin-left: 5%;
-                min-height: 150px;
-                padding: 18px;
-                
-                .title {
+                .title, .description{
                     font-size: 1.2rem;
                 }
-                
-                .description {
-                    font-size: 14px;
+
+                .description{
+                    font-size: 1rem;
+                    margin: 0;
+                    margin-top: 20%;
+                    height: 50%;
+                    padding-left: 5%;
                 }
-                
-                button {
-                    width: 100px;
-                    height: 28px;
-                    
-                    .link {
-                        font-size: 0.85rem;
-                        line-height: 28px;
-                    }
+
+                button{
+                    font-size: 0.8rem;
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .jejumMain{
+        min-height: 250vh;
+        
+        .title{
+            font-size: 1.2rem;
+        }
+
+        .cardsPages{
+            height: 500px;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 0%;
+
+            .page1, .page2, .page3{
+                height: 70%;
+                .title, .description{
+                    margin: 0;
+                }
+
+                .title{
+                    margin-top: 3%;
+                }
+
+                .description{
+                    margin-top: 2%;
+                }
+
+                button{
+                    height: 30%;
+                }
+            }
+        }
+
     }
 }

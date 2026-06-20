@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors"
 import {Rotas} from "./routes.js";
+import iplim from "iplim";
 
 const api = express();
 const PORT = 5010;

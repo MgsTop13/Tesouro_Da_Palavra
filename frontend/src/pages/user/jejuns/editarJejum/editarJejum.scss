@@ -11,63 +11,81 @@
     --BorderInput: #2e2e2e;
 
     background-color: var(--BgColor);
-    min-height: 100vh;
+    min-height: 120vh;
 
-    .nameuser {
-        color: var(--TextColor);
-        text-align: start;
-        margin: 50px;
-        width: 150px;
-        font-size: 1.6rem;
-    }
+    .info {
+        width: 100%;
+        background-color: blue;
+        margin-top: 3%;
 
-    .desc {
-        color: var(--TextColor);
-        text-align: center;
-        font-size: 1.4rem;
+        .nameuser {
+            color: var(--TextColor);
+            text-align: center;
+            width: 20%;
+            margin: 1.5%;
+
+            background-color: red;
+            font-size: 1.6rem;
+        }
+
+        .desc {
+            color: var(--TextColor);
+            text-align: center;
+            font-size: 1.4rem;
+            width: 100%;
+            background-color: red;
+
+        }
     }
 
     .dadosUser {
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        
         position: relative;
-        left: 35%;
-        top: 20px;
-        min-height: 250px;
-        width: 30%;
-        height: 100%;
-        gap: 10px;
+        left: 50%;
+        transform: translate(-50%, 10%);
+
+        height: 340px;
+        width: 50%;
+        gap: 5%;
         text-align: center;
+        border-radius: 15px;
+
         color: var(--TextColor);
         background-color: var(--CardBg);
         box-shadow: var(--CardBgShadow);
-        border-radius: 15px;
 
-        &:hover{
+        &:hover {
             box-shadow: var(--CardBgShadowHover);
-            transform: translateY(-2px)
+            transform: translate(-50%, 8%)
         }
-        .input0,
-        .input1,
-        .input2,
-        .input3 {
+
+        .input0 {
+            margin-top: 2%;
+        }
+
+        .input0, .input1, .input2, .input3 {
+            background-color: red;
+            height: 15%;
+            width: 100%;
             input {
                 border-radius: 7px;
-                width: 220px;
-                height: 27px;
-                padding-left: 7px;
-                font-size: 12px;
-                border: none;
+                width: 60%;
+                height: 60%;
+                padding-left: 2%;
+                font-size: 0.8rem;
                 border: 1px solid var(--BorderInput);
             }
         }
     }
 
     footer {
-        position: relative;
-        top: 75px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 15%;
     }
 }
 
@@ -86,11 +104,11 @@
             margin: 40px;
             font-size: 1.5rem;
         }
-        
+
         .desc {
             font-size: 1.3rem;
         }
-        
+
         .dadosUser {
             left: 25%;
             width: 50%;
@@ -105,16 +123,16 @@
             font-size: 1.4rem;
             width: 120px;
         }
-        
+
         .desc {
             font-size: 1.2rem;
         }
-        
+
         .dadosUser {
             left: 15%;
             width: 70%;
             top: 15px;
-            
+
             .input1,
             .input2,
             .input3 {
@@ -124,9 +142,6 @@
                 }
             }
         }
-        
-        footer {
-            top: 50px;
-        }
+
     }
 }

@@ -1,37 +1,38 @@
 import { connection } from "../connections.js";
 
-    export async function ListarVersiculosUser(idUser) {
-        /*try{
-            const {data, error} = await supabase
-                .from('TesouroDaPalavra')
-                .select('*')
-                .eq('id_user', idUser)
-            
-            return{
-                sucess: true,
-                data: data
-            }
-        } catch(error){
-            return {
-                error: error.message,
-                data: []
-            }
-        }*/
-       const command = `
-        select * from A
-       `
-       const [dados] = await connection.query(command, idUser);
-       return dados
+export async function ListarVersiculosUser(idUser) {
+    /*try{
+        const {data, error} = await supabase
+            .from('TesouroDaPalavra')
+            .select('*')
+            .eq('id_user', idUser)
         
-    }
+        return{
+            sucess: true,
+            data: data
+        }
+    } catch(error){
+        return {
+            error: error.message,
+            data: []
+        }
+        }*/
+    const command = `
+           select * from VersiculosUser
+           WHERE id_user = ?
+       `
+    const [dados] = await connection.query(command, idUser);
+    return dados
 
-export async function VerificarVersiculo(Versiculo){
+}
+
+export async function VerificarVersiculo(Versiculo) {
     const command = `
         SELECT vers, id_Vers FROM VersiculosUser
             WHERE vers = ?
     `
 
-    const [versiculos] = await connection.query(command,Versiculo)
+    const [versiculos] = await connection.query(command, Versiculo)
     return versiculos[0];
 }
 
@@ -43,10 +44,10 @@ export async function InserirVersiculoUser(Dados) {
     `
 
     const [info] = await connection.query(Command, [
-        Dados.id_user, 
+        Dados.id_user,
         Dados.sentimento,
         Dados.desc_vers,
-        Dados.vers, 
+        Dados.vers,
         Dados.favorito
     ])
     return info.InsertId;
@@ -63,9 +64,9 @@ export async function EditarVersiculos(Dados, idVers) {
             
     `
     const [info] = await connection.query(Command, [
-        Dados.sentimento,  
-        Dados.desc_vers, 
-        Dados.vers, 
+        Dados.sentimento,
+        Dados.desc_vers,
+        Dados.vers,
         Dados.favorito,
         Dados.id_user,
         idVers
@@ -124,7 +125,7 @@ export async function DesfavoritarVersiculoGlobal(idUser, idVersiculo) {
     return info;
 }
 
-export async function ListarVersiculosFavoritos(idUser){
+export async function ListarVersiculosFavoritos(idUser) {
     const command = `
         SELECT * FROM VersiculosUser
             WHERE favorito = TRUE and id_user = ?
@@ -134,7 +135,7 @@ export async function ListarVersiculosFavoritos(idUser){
     return info;
 }
 
-export async function ListarVersiculosFavoritosGlobal(idUser){
+export async function ListarVersiculosFavoritosGlobal(idUser) {
     const command = `
         SELECT * FROM VersiculosGlobal
             WHERE favorito = TRUE and id_user = ?
