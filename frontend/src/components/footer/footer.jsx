@@ -1,22 +1,17 @@
 import { Link, useLocation } from "react-router"
 import Insert from "/icons/Insert.png"
 import Delete from "/icons/Delete.png"
-import Edit from "/icons/Edit.png"
+
 import List from "/icons/List.png"
 import "./footer.scss"
+
+
 export default function Footer() {
     const localizacaoDaPagina = useLocation(); //Isso vai pegar a url
     const CaminhoDaUrl = location.pathname; //Isso vai dizer em que pagina você está 
     return (
         <footer>
             <div className="icones">
-                <nav className={`icon1 ${CaminhoDaUrl === '/Edit' ? 'Active': ''}`}>
-                    <Link className="link" to={'/Edit'}>
-                        <img src={Edit} />
-                        <h3>Editar</h3>
-                    </Link>
-                </nav>
-
                 <nav className={`icon2 ${CaminhoDaUrl === '/Insert' ? 'Active': ''}`}>
                     <Link className="link" to={'/Insert'}>
                         <img src={Insert} />

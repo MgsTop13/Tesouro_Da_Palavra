@@ -1,6 +1,5 @@
 import Footer from "../../../../components/footer/footer.jsx"
 import Cabecalho2 from "../../../../components/headerPages"
-import { Link } from "react-router"
 import "./inserirJejum.scss"
 
 export default function InserirJejum() {
@@ -30,6 +29,7 @@ export default function InserirJejum() {
                     <h3 className="versiculo">Versiculo adicional</h3>
                     <input type="text" placeholder="Romanos 13:15-16" />
                 </div>
+                <button className="btn">Adicionar</button>
             </section>
             <Footer />
         </main>

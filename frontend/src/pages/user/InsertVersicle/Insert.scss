@@ -10,24 +10,21 @@
     --inputBg: #e8d8c9a4;
 
     background-color: var(--BgColor);
-    min-height: 100vh;
-    box-sizing: border-box;
+    min-height: 110vh;
+    
 
     .nameUser {
         color: var(--TextColor);
         text-align: start;
-        margin: 30px 0 15px 20px;
+        margin: 40px 35px;
         font-size: 1.6rem;
-        max-width: 100%;
-        word-break: break-word;
+        width: 80%;
     }
 
     .desc {
         color: var(--TextColor);
         text-align: center;
         font-size: 1.4rem;
-        margin: 0 20px 30px;
-        line-height: 1.4;
     }
 
     .versiculoInfo {
@@ -147,7 +144,9 @@
     }
 
     footer {
-        margin-top: 50px;
+        height: 14%;
+        position: fixed;
+        bottom: 0;
     }
 }
 

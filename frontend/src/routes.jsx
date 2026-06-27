@@ -10,7 +10,6 @@ import {BrowserRouter, Routes, Route} from "react-router"
 //Usuario
     import Account from "./pages/account/account"
     //Versiculos
-        import Edit from "./pages/user/EditVersicle/Edit"
         import Insert from "./pages/user/InsertVersicle/Insert"
         import Remove from "./pages/user/RemoveVersicle/Remove"
         import YourVersicles from "./pages/user/YoursVersicles/YourVersicles"
@@ -18,7 +17,6 @@ import {BrowserRouter, Routes, Route} from "react-router"
     
     //Jejuns
         import JejumHome from "./pages/user/jejuns/jejumhome"
-        import EditJejum from "./pages/user/jejuns/editarJejum/editJejum"
         import RemoverJejum from "./pages/user/jejuns/removerJejum/removerJejum"
         import InserirJejum from "./pages/user/jejuns/inserirJejum/inserirJejum"
 
@@ -43,7 +41,6 @@ export default function NavegationRouter(){
                     
                 {/*Usuario */}
                     {/*Versiculos */}
-                        <Route path="/Edit" element={<Edit />} />
                         <Route path="/Remove" element={<Remove />} />
                         <Route path="/Insert" element={<Insert />} />
                         <Route path="/YourVersicles" element={<YourVersicles />} />
@@ -51,7 +48,6 @@ export default function NavegationRouter(){
                     
                     {/*Jejuns */}
                         <Route path="/Jejuns" element={<JejumHome />} />
-                        <Route path="/EditarJejum" element={<EditJejum />} />
                         <Route path="/InserirJejum" element={<InserirJejum />} />
                         <Route path="/RemoverJejum" element={<RemoverJejum />} />
             </Routes>

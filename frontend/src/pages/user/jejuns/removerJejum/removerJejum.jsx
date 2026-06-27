@@ -1,6 +1,5 @@
 import Footer from "../../../../components/footer/footer.jsx"
 import Cabecalho2 from "../../../../components/headerPages"
-import { Link } from "react-router"
 import "./removerJejum.scss"
 
 export default function RemoverJejum() {
@@ -14,6 +13,7 @@ export default function RemoverJejum() {
             <div className="input">
                 <h1>Coloque o numero de identificador do versiculo</h1>
                 <input type="number" placeholder="7" />
+                <button className="btn">Deletar</button>
             </div>
 
             <Footer />

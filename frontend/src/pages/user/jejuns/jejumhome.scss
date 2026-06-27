@@ -18,12 +18,11 @@
         height: 220px;
         display: grid;
         align-items: center;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 5%;
 
         .page1,
-        .page2,
-        .page3 {
+        .page2 {
             position: relative;
             margin-left: 15%;
             width: 75%;

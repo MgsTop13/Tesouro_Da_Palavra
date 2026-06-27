@@ -11,7 +11,7 @@
     --BorderInput: #2e2e2e;
 
     background-color: var(--BgColor);
-    min-height: 100vh;
+    min-height: 110vh;
 
     .nameuser {
         color: var(--TextColor);
@@ -30,20 +30,21 @@
     .dadosUser {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        padding-top: 2%;
+        gap: 20px;
+
         position: relative;
         left: 35%;
         top: 20px;
-        min-height: 280px;
+        height: 310px;
         width: 30%;
-        height: 100%;
-        gap: 10px;
+        
         text-align: center;
+        border-radius: 15px;
+
         color: var(--TextColor);
         background-color: var(--CardBg);
         box-shadow: var(--CardBgShadow);
-        border-radius: 15px;
 
         &:hover{
             box-shadow: var(--CardBgShadowHover);
@@ -56,79 +57,34 @@
         .input3 {
             input {
                 border-radius: 7px;
-                width: 220px;
-                height: 27px;
-                padding-left: 7px;
-                font-size: 12px;
+                width: 80%;
+                height: 70%;
+                padding-left: 3%;
+                font-size: 0.8rem;
                 border: none;
                 border: 1px solid var(--BorderInput);
             }
         }
+
+        .btn{
+            background-color: var(--ButtonBg);
+            color: var(--TextButton);
+
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translate(-50%);
+            
+            width: 50%;
+            height: 10%;
+
+            border-radius: 7px;
+        }
     }
 
     footer {
-        position: relative;
-        top: 75px;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .inserirJejum {
-        .dadosUser {
-            left: 30%;
-            width: 40%;
-        }
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .inserirJejum {
-        .nameuser {
-            margin: 40px;
-            font-size: 1.5rem;
-        }
-        
-        .desc {
-            font-size: 1.3rem;
-        }
-        
-        .dadosUser {
-            left: 25%;
-            width: 50%;
-        }
-    }
-}
-
-@media screen and (max-width: 426px) {
-    .inserirJejum {
-        .nameuser {
-            margin: 30px;
-            font-size: 1.4rem;
-            width: 120px;
-        }
-        
-        .desc {
-            font-size: 1.2rem;
-        }
-        
-        .dadosUser {
-            left: 15%;
-            width: 70%;
-            top: 15px;
-            
-            .input0,
-            .input1,
-            .input2,
-            .input3 {
-                input {
-                    width: 200px;
-                    height: 25px;
-                }
-            }
-        }
-        
-        footer {
-            top: 50px;
-        }
+        height: 15%;
+        position: fixed;
+        bottom: 0;
     }
 }

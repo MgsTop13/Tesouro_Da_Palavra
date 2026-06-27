@@ -11,7 +11,7 @@
     --CardBgShadowHover: -9px 9px 4px #000000a1;
 
     background-color: var(--BgColor);
-    min-height: 100vh;
+    min-height: 150vh;
     color: var(--TextColor);
     box-sizing: border-box;
 
@@ -88,7 +88,11 @@
     .title {
         color: var(--TextColor);
         text-align: center;
-        margin: 20px 0;
+    }
+
+    footer{
+        position: fixed;
+        bottom: 0;
     }
 }
 
